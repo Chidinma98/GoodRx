@@ -62,14 +62,14 @@ I am going to be building a  medical app for people on prescription and non pres
 ## UI Components
 
 
-.
+
 | Component | Description | 
-| --- | :---: |  
+
 | Login Page| Will be used for authentication| 
 | Home Page | Will show users all the things that they can do on the app | 
 | Messaging| Allows users to send SMS to their doctor| 
 | Prescription | Users can see what Prescription they are currently on, edit or delete a prescription| 
-| Doctor Page| Users can edit, delete or update their doctor
+| Doctor Page| Users can edit, delete or update their doctor |
 
 
 
