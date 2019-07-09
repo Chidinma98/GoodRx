@@ -34,10 +34,10 @@ I am going to be building a  medical app for people on prescription and non pres
 
 #### MVP 
 
--Full CRUD on at least two resources on backend 
--Have react from-end rendering
+- Full CRUD on at least two resources on backend 
+- Have react from-end rendering
 - Have SMS working
--Have authentication working
+- Have authentication working
 - Material UI should be implemented on every component in the front -end
 
 #### PostMVP 
@@ -48,11 +48,11 @@ I am going to be building a  medical app for people on prescription and non pres
 
 ## Architectural Design
 
--Login Page or Component(Using authentication)
--A home  page where users can choose to  message their doctors, check on their prescription amount, edit a prescription or add a prescription
--The page to send sms.
--Users can also edit their doctors	
--The app will also remind users when it is time to take a certain prescription
+- Login Page or Component(Using authentication)
+- A home  page where users can choose to  message their doctors, check on their prescription amount, edit a prescription or      add a prescription
+- The page to send sms.
+- Users can also edit their doctors	
+- The app will also remind users when it is time to take a certain prescription
 
 
 ## ERD
@@ -98,7 +98,6 @@ No Sample Functions Yet
  
 
 | Library | What it Does | 
-| --- | :---: |  
 | Authentication | Will allow users to sign in to personal account | 
 | Twillow| Allows users to send SMS directly from the app | 
 | Ruby on Rails | Allow for CRUD functionality in the back-end | 
