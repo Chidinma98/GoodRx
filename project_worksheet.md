@@ -62,7 +62,7 @@ I am going to be building a  medical app for people on prescription and non pres
 ## UI Components
 
 
-#### SAMPLE.....
+.
 | Component | Description | 
 | --- | :---: |  
 | Login Page| Will be used for authentication| 
@@ -74,8 +74,7 @@ I am going to be building a  medical app for people on prescription and non pres
 
 
 
-
-#### SAMPLE.....
+.
 | Component | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: |
 | Back-end CRUD/seed| H | 10hrs| |
@@ -97,7 +96,7 @@ No Sample Functions Yet
 ## Additional Libraries
  Use this section to list all supporting libraries and thier role in the project. 
  
- #### SAMPLE.....
+
 | Library | What it Does | 
 | --- | :---: |  
 | Authentication | Will allow users to sign in to personal account | 
@@ -112,8 +111,6 @@ No Sample Functions Yet
 
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
 
-#### SAMPLE.....
-```
 
 ```
 
