@@ -34,7 +34,7 @@ I am going to be building a  medical app for people on prescription and non pres
 
 #### MVP 
 
--Full CRUD on at least two resources on back-end 
+-Full CRUD on at least two resources on backend 
 -Have react from-end rendering
 - Have SMS working
 -Have authentication working
