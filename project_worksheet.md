@@ -18,8 +18,8 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 
 ## Project Description
+I am going to be building a  medical app for people on prescription and non prescription medications. I will have two models, a prescription model and a doctor model. Based on the input in the prescription model, the app will alert people when it is time to take their medicationss. I will also allow them to send SMS messages to their doctor, in case they are having any side effects or have any questions about their medication. I will be using Ruby on rails for the back-end,  twillow for sms. I will also have authentication.
 
-I am going to be building a one stop medical app for people on prescription and non prescription medications. I will have two models, a prescription model and a doctor model. Based on the input in the prescription model, the app will alert people when it is time to take their prescriptions. I will also allow them to send SMS messages to their doctor, in case they are having any side effects or have any questions about their medication. I will be using Ruby on rails for the back-end, the sms messaging sustem twillow and authentication.
 
 ## Wireframes
 
@@ -41,18 +41,18 @@ I am going to be building a one stop medical app for people on prescription and 
 - Material UI should be implemented on every component in the front -end
 
 #### PostMVP 
--Login Page or Component(Using authentication)
-.A home  page where users can choose to  message their doctors, check on their prescription amount, edit a prescription or add a prescription
--The page to send sms.
--Users can also edit their doctors	
--The app will also remind users when it is time to take a certain prescription
 
+- Have images of medication
 
 
 
 ## Architectural Design
 
-Define the the components and the architectural design of your app.
+-Login Page or Component(Using authentication)
+-A home  page where users can choose to  message their doctors, check on their prescription amount, edit a prescription or add a prescription
+-The page to send sms.
+-Users can also edit their doctors	
+-The app will also remind users when it is time to take a certain prescription
 
 
 ## ERD
