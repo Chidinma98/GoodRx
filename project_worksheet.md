@@ -34,12 +34,21 @@ I am going to be building a one stop medical app for people on prescription and 
 
 #### MVP 
 
-- Find and use external api 
-- Render data on page in a list
+-Full CRUD on at least two resources on back-end 
+-Have react from-end rendering
+- Have SMS working
+-Have authentication working
+- Material UI should be implemented on every component in the front -end
 
 #### PostMVP 
+-Login Page or Component(Using authentication)
+.A home  page where users can choose to  message their doctors, check on their prescription amount, edit a prescription or add a prescription
+-The page to send sms.
+-Users can also edit their doctors	
+-The app will also remind users when it is time to take a certain prescription
 
-- Add data to favorites section
+
+
 
 ## Architectural Design
 
@@ -48,35 +57,42 @@ Define the the components and the architectural design of your app.
 
 ## ERD
 
-Create the ERD model for your project
+[Models](https://www.draw.io/#G1FSRxbiwSg5KvTiYdFRm_2dZ319jOnoRU)
 
 ## UI Components
 
-Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components. 
 
 #### SAMPLE.....
 | Component | Description | 
 | --- | :---: |  
-| Header | This will render the header include the nav | 
-| Footer | This will render the header include the nav | 
+| Login Page| Will be used for authentication| 
+| Home Page | Will show users all the things that they can do on the app | 
+| Messaging| Allows users to send SMS to their doctor| 
+| Prescription | Users can see what Prescription they are currently on, edit or delete a prescription| 
+| Doctor Page| Users can edit, delete or update their doctor
 
 
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe.
+
+
 
 #### SAMPLE.....
 | Component | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs |
-| Total | H | 6hrs| 5hrs | 
+| Back-end CRUD/seed| H | 10hrs| |
+| React From-end | H | 8hrs| |
+| Authentication| H | 14hrs|  | 
+| SMS| H | 14hrs|  | 
+| Material UI Implementation| H | 20hrs|  | 
+| Alert Implementation for Medication| H | 13hrs|  | 
+
 
 ## Helper Functions
-Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
+No Helper functions yet
 
 #### SAMPLE.....
-| Function | Description | 
-| --- | :---: |  
-| Capitalize | This will capitalize the first letter in a string of text | 
+No Sample Functions Yet
+
+
 
 ## Additional Libraries
  Use this section to list all supporting libraries and thier role in the project. 
@@ -84,8 +100,12 @@ Helper functions should be generic enought that they can be reused in other appl
  #### SAMPLE.....
 | Library | What it Does | 
 | --- | :---: |  
-| Bootstrap | Used to help style my application | 
-| Giphy API | Used to get gifs to use | 
+| Authentication | Will allow users to sign in to personal account | 
+| Twillow| Allows users to send SMS directly from the app | 
+| Ruby on Rails | Allow for CRUD functionality in the back-end | 
+| React | Allows for CRUD functionality in the front-end | 
+| Material UI| Better styling and user interaction on front-end application | 
+
 
 
 ## Code Snippet
@@ -94,22 +114,15 @@ Use this section to include a brief code snippet of functionality that you are p
 
 #### SAMPLE.....
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+
 ```
 
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.  
+No Changes have been made yet 
 
-#### SAMPLE.....
-| Original Plan | Outcome | 
-| --- | :---: |  
-| Have one Book component | Split that component into BookInfo and BookInteraction as the component grew too complicated | 
+
 
 ## Issues and Resolutions
  Use this section to list of all major issues encountered and their resolution.
 
-#### SAMPLE.....
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object
+No issues have been found yet.
