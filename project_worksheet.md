@@ -9,21 +9,21 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |  Day | Deliverable | Status
 |---|---| ---|
 |Day 1| Project Description | Incomplete
-|Day 2| Wireframes / Priority Matrix / Functional Components | Incomplete
-|Day 3| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|Day 4| Pseudocode / actual code | Incomplete
-|Day 5| Initial Clickable Model  | Incomplete
-|Day 6| MVP | Incomplete
+|Day 2| Project approval/ full back-end build out with seeded data| Incomplete
+|Day 3| Implementation of authentication | Incomplete
+|Day 4| Implementation of SMS messaging system | Incomplete
+|Day 5| Implementation of material UI and other css libraries.  | Incomplete
+|Day 6| Check for bugs| Incomplete
 |Day 7| Present | Incomplete
 
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+I am going to be building a one stop medical app for people on prescription and non prescription medications. I will have two models, a prescription model and a doctor model. Based on the input in the prescription model, the app will alert people when it is time to take their prescriptions. I will also allow them to send SMS messages to their doctor, in case they are having any side effects or have any questions about their medication. I will be using Ruby on rails for the back-end, the sms messaging sustem twillow and authentication.
 
 ## Wireframes
 
-Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
+[App Wireframe](https://www.draw.io/#G1oOX96HWUKa4-yVISFWN3hJmocKIIBeCQ)
 
 ## Priority Matrix
 
