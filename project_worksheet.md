@@ -27,7 +27,8 @@ I am going to be building a one stop medical app for people on prescription and 
 
 ## Priority Matrix
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matix.  
+[Priority Matrix](https://www.draw.io/#G1FSRxbiwSg5KvTiYdFRm_2dZ319jOnoRU)
+
 
 ### MVP/PostMVP - 5min
 
