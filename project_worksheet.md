@@ -73,6 +73,7 @@ I am going to be building a  medical app for people on prescription and non pres
 
 
 
+## Priority Timeline
 
 .
 | Component | Priority | Estimated Time | Actual Time |
