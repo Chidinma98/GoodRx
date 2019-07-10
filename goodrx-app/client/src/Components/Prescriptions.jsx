@@ -23,14 +23,16 @@ this.setState({
 
     render(){
          const prescriptions = this.state.prescriptions
+         console.log(prescriptions)
         
         return(<div>
            
-<h1>{prescriptions.map((prescription, index)=>{
-return(<p key = {prescription.id}>{prescription.name}</p>)
+ <h1>{prescriptions.map((prescription, index)=>{
+return(<p key = {prescription.id}>{prescription.name}| {prescription.dosage} |
+    </p> )
 
 
-})}</h1>
+})}</h1> 
            
         </div>)
     }

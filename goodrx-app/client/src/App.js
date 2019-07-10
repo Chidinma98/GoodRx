@@ -4,6 +4,7 @@ import LoginForm from "./Components/LoginForm";
 import SignUpForm from "./Components/SignUpForm";
 import Prescriptions from "./Components/Prescriptions"
 import Info from "./Components/Info"
+import Doctors from "./Components/Doctors"
 
 import axios from 'axios';
 import decode from 'jwt-decode';
@@ -86,7 +87,7 @@ class App extends Component {
         <div className="App">
 
 
-    {userIsLoggedIn && <Redirect to='/info'/> } 
+    {userIsLoggedIn? <Redirect to='/info'/>: <Redirect to = '/'/> } 
 
 
           <header>
@@ -122,6 +123,7 @@ class App extends Component {
             <Route exact path="/signup" render={() => <SignUpForm handleSignUp={this.handleSignUp} />} />
             <Route exact path = "/prescriptions" render={((props) => <Prescriptions {...props} id = {this.state.currentUser.user_id}/>)}/>
             <Route exact path = "/info" render={((props) => <Info {...props} id = {this.state.currentUser.user_id}/>)}/>
+            <Route exact path = "/doctors" render={((props) => <Doctors {...props} id = {this.state.currentUser.user_id}/>)}/>
             <Route exact path= '/home' render={()=> <div> this is the homepage </div>} />
 
           </Switch>
