@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link, Switch, Redirect } from "react-ro
 import LoginForm from "./Components/LoginForm";
 import SignUpForm from "./Components/SignUpForm";
 import Prescriptions from "./Components/Prescriptions"
+import Info from "./Components/Info"
 
 import axios from 'axios';
 import decode from 'jwt-decode';
@@ -85,7 +86,7 @@ class App extends Component {
         <div className="App">
 
 
-    {userIsLoggedIn && <Redirect to='/home'/> } 
+    {userIsLoggedIn && <Redirect to='/info'/> } 
 
 
           <header>
@@ -99,7 +100,7 @@ class App extends Component {
        
             
             <h1>
-               <Link
+               {/* <Link
                 to="/"
                 onClick={() =>
                   this.setState({
@@ -111,15 +112,16 @@ class App extends Component {
                 }
               >
                 Auth App
-              </Link> 
+              </Link>  */}
 
             </h1>
-          <h2> <Link to = {`/prescriptions`}> My Prescriptions </Link> </h2>
+          {/* <h2> <Link to = {`/prescriptions`}> My Prescriptions </Link> </h2> */}
           </header>
           <Switch>
             <Route exact path="/login" render={(props) => <LoginForm {...props} handleLogin={this.handleLogin} />} />
             <Route exact path="/signup" render={() => <SignUpForm handleSignUp={this.handleSignUp} />} />
             <Route exact path = "/prescriptions" render={((props) => <Prescriptions {...props} id = {this.state.currentUser.user_id}/>)}/>
+            <Route exact path = "/info" render={((props) => <Info {...props} id = {this.state.currentUser.user_id}/>)}/>
             <Route exact path= '/home' render={()=> <div> this is the homepage </div>} />
 
           </Switch>
