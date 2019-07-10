@@ -26,9 +26,8 @@ ActiveRecord::Schema.define(version: 2019_07_10_012803) do
   create_table "prescriptions", force: :cascade do |t|
     t.string "name"
     t.string "dosage"
-    t.string "color"
     t.string "medication_time"
-    t.string "description"
+    t.string "purpose"
     t.string "pharmacy"
     t.bigint "user_id"
     t.bigint "doctor_id"
