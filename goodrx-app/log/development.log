@@ -1940,3 +1940,89 @@ Processing by PrescriptionsController#index as HTML
 Completed 200 OK in 11ms (Views: 3.1ms | ActiveRecord: 2.8ms)
 
 
+Started GET "/users/undefined/prescriptions" for ::1 at 2019-07-10 11:23:37 -0400
+Processing by PrescriptionsController#index as HTML
+  Parameters: {"user_id"=>"undefined"}
+  [1m[36mUser Load (18.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:6
+Completed 404 Not Found in 58ms (ActiveRecord: 18.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=undefined):
+  
+app/controllers/prescriptions_controller.rb:6:in `index'
+Started GET "/users/undefined/prescriptions" for ::1 at 2019-07-10 11:23:39 -0400
+Processing by PrescriptionsController#index as HTML
+  Parameters: {"user_id"=>"undefined"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:6
+Completed 404 Not Found in 3ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=undefined):
+  
+app/controllers/prescriptions_controller.rb:6:in `index'
+Started POST "/auth/login" for ::1 at 2019-07-10 11:23:59 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"password"=>"[FILTERED]", "username"=>"Naijagurl", "authentication"=>{"password"=>"[FILTERED]", "username"=>"Naijagurl"}}
+  [1m[36mUser Load (10.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Naijagurl"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+Completed 200 OK in 391ms (Views: 4.6ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/users/2/prescriptions" for ::1 at 2019-07-10 11:24:02 -0400
+Processing by PrescriptionsController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:6
+  [1m[36mPrescription Load (0.5ms)[0m  [1m[34mSELECT "prescriptions".* FROM "prescriptions" WHERE "prescriptions"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/prescriptions_controller.rb:8
+Completed 200 OK in 12ms (Views: 7.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/undefined/prescriptions" for ::1 at 2019-07-10 11:44:25 -0400
+Processing by PrescriptionsController#index as HTML
+  Parameters: {"user_id"=>"undefined"}
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:6
+Completed 404 Not Found in 86ms (ActiveRecord: 18.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=undefined):
+  
+app/controllers/prescriptions_controller.rb:6:in `index'
+Started GET "/users/2/prescriptions" for ::1 at 2019-07-10 11:44:32 -0400
+Processing by PrescriptionsController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:6
+  [1m[36mPrescription Load (10.0ms)[0m  [1m[34mSELECT "prescriptions".* FROM "prescriptions" WHERE "prescriptions"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/prescriptions_controller.rb:8
+Completed 200 OK in 65ms (Views: 40.7ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/users/undefined/prescriptions" for ::1 at 2019-07-10 11:44:56 -0400
+Processing by PrescriptionsController#index as HTML
+  Parameters: {"user_id"=>"undefined"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:6
+Completed 404 Not Found in 8ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=undefined):
+  
+app/controllers/prescriptions_controller.rb:6:in `index'
+Started GET "/users/2/prescriptions" for ::1 at 2019-07-10 11:45:45 -0400
+Processing by PrescriptionsController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:6
+  [1m[36mPrescription Load (1.0ms)[0m  [1m[34mSELECT "prescriptions".* FROM "prescriptions" WHERE "prescriptions"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/prescriptions_controller.rb:8
+Completed 200 OK in 57ms (Views: 34.5ms | ActiveRecord: 2.4ms)
+
+

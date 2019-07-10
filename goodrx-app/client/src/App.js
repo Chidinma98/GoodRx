@@ -73,10 +73,7 @@ class App extends Component {
 
   }
 
-  showPrescriptions = async () =>{
-    const prescriptions = await axios.get(`http://localhost:3000/users/${this.state.currentUser.user_id}/prescriptions`)
-  console.log(prescriptions)
-  }
+ 
   
 
   render() {
@@ -98,11 +95,11 @@ class App extends Component {
 <nav> <Link to='/signup'>Sign Up</Link> <Link to='/login'>Log in</Link></nav> }         
 
    <div> {currentUser.user_id && `Hello ${currentUser.username}`} </div>
-   {/* {console.log(currentUser.user_id)} */}
-            <p onClick ={this.showPrescriptions}>Prescriptions</p>
+
+       
             
             <h1>
-              <Link
+               <Link
                 to="/"
                 onClick={() =>
                   this.setState({
@@ -114,13 +111,15 @@ class App extends Component {
                 }
               >
                 Auth App
-              </Link>
+              </Link> 
+
             </h1>
+          <h2> <Link to = {`/prescriptions`}> My Prescriptions </Link> </h2>
           </header>
           <Switch>
             <Route exact path="/login" render={(props) => <LoginForm {...props} handleLogin={this.handleLogin} />} />
             <Route exact path="/signup" render={() => <SignUpForm handleSignUp={this.handleSignUp} />} />
-            <Route exact path = "/prescriptions" render={((props) => <Prescriptions />)}/>
+            <Route exact path = "/prescriptions" render={((props) => <Prescriptions {...props} id = {this.state.currentUser.user_id}/>)}/>
             <Route exact path= '/home' render={()=> <div> this is the homepage </div>} />
 
           </Switch>
