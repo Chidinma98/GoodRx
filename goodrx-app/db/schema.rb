@@ -10,18 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_09_154340) do
+ActiveRecord::Schema.define(version: 2019_07_10_012803) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "doctors", force: :cascade do |t|
+    t.string "name"
+    t.string "specialization"
+    t.string "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "prescriptions", force: :cascade do |t|
+    t.string "name"
+    t.string "dosage"
+    t.string "color"
+    t.string "medication_time"
+    t.string "description"
+    t.string "pharmacy"
+    t.bigint "user_id"
+    t.bigint "doctor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["doctor_id"], name: "index_prescriptions_on_doctor_id"
+    t.index ["user_id"], name: "index_prescriptions_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "prescriptions", "doctors"
+  add_foreign_key "prescriptions", "users"
 end
