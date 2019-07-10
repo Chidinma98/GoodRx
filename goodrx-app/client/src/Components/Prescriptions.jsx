@@ -23,16 +23,21 @@ this.setState({
 
     render(){
          const prescriptions = this.state.prescriptions
-         console.log(prescriptions)
-        
+       
+      
         return(<div>
-           
+       <button onClick = {()=>{this.props.history.goBack()}}>Back</button> 
  <h1>{prescriptions.map((prescription, index)=>{
-return(<p key = {prescription.id}>{prescription.name}| {prescription.dosage} |
+return(<p key = {prescription.id}>Name:{prescription.name}| Dosage:{prescription.dosage} | Time:{prescription.medication_time} 
+| Purpose: {prescription.purpose} | Pharmacy: {prescription.pharmacy} | Prescriber :{prescription.doctor_id}
     </p> )
 
 
 })}</h1> 
+
+
+
+
            
         </div>)
     }

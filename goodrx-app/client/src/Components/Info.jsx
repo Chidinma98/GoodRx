@@ -14,9 +14,9 @@ class Info extends Component{
         return(<div>
 
           <Link to = {`/prescriptions`}> <p>Prescriptions</p> </Link>
-          <Link to = {`/doctors`}><p>Doctors</p></Link>
-          <Link><p>Messages</p></Link>
-          <Link><p>Pharmacies</p></Link>
+          <Link to = {`/`}><p>Doctors</p></Link>
+          <Link to = {`/`}><p>Messages</p></Link>
+          <Link to = {`/`}><p>Pharmacies</p></Link>
 
         </div>)
     }
