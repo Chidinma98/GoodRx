@@ -270,3 +270,174 @@ Processing by UsersController#create as */*
 Completed 200 OK in 673ms (Views: 0.2ms | ActiveRecord: 48.5ms)
 
 
+  [1m[36mUser Load (7.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2019-07-09 15:52:42 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Library/Ruby/Gems/2.3.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Library/Ruby/Gems/2.3.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (134.9ms)
+Completed 200 OK in 346ms (Views: 309.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auth/login" for ::1 at 2019-07-09 20:42:33 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"password"=>"[FILTERED]", "username"=>"General", "authentication"=>{"password"=>"[FILTERED]", "username"=>"General"}}
+  [1m[36mUser Load (19.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "General"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+Completed 200 OK in 1032ms (Views: 79.6ms | ActiveRecord: 21.7ms)
+
+
+Started POST "/auth/login" for ::1 at 2019-07-09 20:42:53 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"password"=>"[FILTERED]", "username"=>"whatsep", "authentication"=>{"password"=>"[FILTERED]", "username"=>"whatsep"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "whatsep"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+Completed 500 Internal Server Error in 203ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/application_controller.rb:20:in `handle_login'
+app/controllers/authentication_controller.rb:4:in `login'
+Started POST "/auth/login" for ::1 at 2019-07-09 20:42:56 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"password"=>"[FILTERED]", "username"=>"whatsep", "authentication"=>{"password"=>"[FILTERED]", "username"=>"whatsep"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "whatsep"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 4.8ms)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/application_controller.rb:20:in `handle_login'
+app/controllers/authentication_controller.rb:4:in `login'
+Started POST "/users" for ::1 at 2019-07-09 20:44:26 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"ruby", "email"=>"naija@fakemail.com", "phone_number"=>"9086758765", "password"=>"[FILTERED]", "passwordConfirm"=>"[FILTERED]", "user"=>{"username"=>"ruby", "email"=>"naija@fakemail.com", "phone_number"=>"9086758765"}}
+  [1m[35m (3.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (6.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ruby"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "naija@fakemail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[35m (3.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:21
+Completed 500 Internal Server Error in 797ms (ActiveRecord: 14.3ms)
+
+
+  
+ActiveModel::RangeError (9086758765 is out of range for ActiveModel::Type::Integer with limit 4 bytes):
+  
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/auth/login" for ::1 at 2019-07-09 20:44:44 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"password"=>"[FILTERED]", "username"=>"ruby", "authentication"=>{"password"=>"[FILTERED]", "username"=>"ruby"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ruby"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/application_controller.rb:20:in `handle_login'
+app/controllers/authentication_controller.rb:4:in `login'
+Started POST "/auth/login" for ::1 at 2019-07-09 20:44:47 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"password"=>"[FILTERED]", "username"=>"ruby", "authentication"=>{"password"=>"[FILTERED]", "username"=>"ruby"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ruby"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/application_controller.rb:20:in `handle_login'
+app/controllers/authentication_controller.rb:4:in `login'
+Started POST "/auth/login" for ::1 at 2019-07-09 20:45:27 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"password"=>"[FILTERED]", "username"=>"ruby", "authentication"=>{"password"=>"[FILTERED]", "username"=>"ruby"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ruby"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/application_controller.rb:20:in `handle_login'
+app/controllers/authentication_controller.rb:4:in `login'
+Started POST "/users" for ::1 at 2019-07-09 20:46:35 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"cat", "email"=>"me@fakemail.com", "phone_number"=>"9084942240", "password"=>"[FILTERED]", "passwordConfirm"=>"[FILTERED]", "user"=>{"username"=>"cat", "email"=>"me@fakemail.com", "phone_number"=>"9084942240"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "cat"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "me@fakemail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:21
+Completed 500 Internal Server Error in 619ms (ActiveRecord: 1.8ms)
+
+
+  
+ActiveModel::RangeError (9084942240 is out of range for ActiveModel::Type::Integer with limit 4 bytes):
+  
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/auth/login" for ::1 at 2019-07-09 20:46:45 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"password"=>"[FILTERED]", "username"=>"cat", "authentication"=>{"password"=>"[FILTERED]", "username"=>"cat"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "cat"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/application_controller.rb:20:in `handle_login'
+app/controllers/authentication_controller.rb:4:in `login'
+Started POST "/auth/login" for ::1 at 2019-07-09 20:46:47 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"password"=>"[FILTERED]", "username"=>"cat", "authentication"=>{"password"=>"[FILTERED]", "username"=>"cat"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "cat"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/application_controller.rb:20:in `handle_login'
+app/controllers/authentication_controller.rb:4:in `login'
+Started POST "/users" for ::1 at 2019-07-09 20:48:51 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"silver", "email"=>"me@gmail.com", "phone_number"=>"7654", "password"=>"[FILTERED]", "passwordConfirm"=>"[FILTERED]", "user"=>{"username"=>"silver", "email"=>"me@gmail.com", "phone_number"=>"7654"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "silver"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "me@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", 7654], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Create (16.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "phone_number", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "silver"], ["email", "me@gmail.com"], ["phone_number", 7654], ["password_digest", "$2a$12$zWYRLyCfA5Oh40w25FTC.uIm3u18d9oBDnp4rxG3XO2qWYV6vtkbm"], ["created_at", "2019-07-10 00:48:51.992926"], ["updated_at", "2019-07-10 00:48:51.992926"]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "silver"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+Completed 200 OK in 1009ms (Views: 4.3ms | ActiveRecord: 23.8ms)
+
+
+Started POST "/auth/login" for ::1 at 2019-07-09 20:49:13 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"password"=>"[FILTERED]", "username"=>"silver", "authentication"=>{"password"=>"[FILTERED]", "username"=>"silver"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "silver"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+Completed 200 OK in 286ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
