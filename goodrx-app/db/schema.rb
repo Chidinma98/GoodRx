@@ -15,25 +15,18 @@ ActiveRecord::Schema.define(version: 2019_07_10_012803) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "doctors", force: :cascade do |t|
-    t.string "name"
-    t.string "specialization"
-    t.string "phone"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "prescriptions", force: :cascade do |t|
     t.string "name"
     t.string "dosage"
     t.string "medication_time"
     t.string "purpose"
     t.string "pharmacy"
+    t.string "prescriber"
+    t.string "prescriber_specialization"
+    t.string "prescriber_phone"
     t.bigint "user_id"
-    t.bigint "doctor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["doctor_id"], name: "index_prescriptions_on_doctor_id"
     t.index ["user_id"], name: "index_prescriptions_on_user_id"
   end
 
@@ -46,6 +39,5 @@ ActiveRecord::Schema.define(version: 2019_07_10_012803) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "prescriptions", "doctors"
   add_foreign_key "prescriptions", "users"
 end

@@ -3,9 +3,9 @@ class DoctorsController < ApplicationController
 
   # GET /doctors
   def index
-   @doctors = User.find(params[:user_id]).doctors
+  #  @doctors = User.find(params[:user_id]).doctors
 
-    render json: @doctors
+  #   render json: @doctors
   end
 
   # GET /doctors/1

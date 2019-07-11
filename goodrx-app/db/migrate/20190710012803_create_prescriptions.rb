@@ -6,8 +6,11 @@ class CreatePrescriptions < ActiveRecord::Migration[5.2]
       t.string :medication_time
       t.string :purpose
       t.string :pharmacy
+      t.string :prescriber
+      t.string :prescriber_specialization
+      t.string :prescriber_phone
       t.references :user, foreign_key: true
-      t.references :doctor, foreign_key: true
+     
 
       t.timestamps
     end

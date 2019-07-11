@@ -10,10 +10,10 @@ Rails.application.routes.draw do
 
   end
   
-  resources :users do
-    resources :doctors
+  # resources :users do
+  #   resources :doctors
 
-  end
+  # end
   
   
   
