@@ -25,11 +25,11 @@ class Messages extends Component {
 
     async handleSubmit(e) {
         e.preventDefault()
-        await axios.post(`http://localhost:3000/users/${this.props.id}/messages`, {
+        const res = await axios.post(`http://localhost:3000/users/${this.props.id}/messages`, {
             doctor: this.state.doctor,
             description: this.state.description
         })
-
+console.log(res);
     
     this.props.history.goBack()
     }
