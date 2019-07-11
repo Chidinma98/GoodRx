@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :messages
   # resources :prescriptions
   resources :doctors
   post '/auth/login', to: 'authentication#login'
@@ -10,6 +11,10 @@ Rails.application.routes.draw do
 
   end
   
+
+  resources :users do
+    resources :messages
+  end
   # resources :users do
   # 
   # end

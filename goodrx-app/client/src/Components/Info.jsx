@@ -15,7 +15,7 @@ class Info extends Component{
 
           <Link to = {`/prescriptions`}> <p>Prescriptions</p> </Link>
           <Link to = {`/`}><p>Doctors</p></Link>
-          <Link to = {`/`}><p>Messages</p></Link>
+          <Link to = {`/messages`}><p>Messages</p></Link>
           <Link to = {`/`}><p>Pharmacies</p></Link>
 
         </div>)

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 has_many :prescriptions
+has_many :messages
 
     has_secure_password
 

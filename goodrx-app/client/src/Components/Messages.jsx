@@ -2,21 +2,51 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios'
 
-class Messages extends Component{
+class Messages extends Component {
+    constructor() {
+        super()
+        this.state = {
+            doctor: "",
+            description: ""
+        }
+
+        this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+
+    }
+
+    handleChange(event) {
+        const name = event.target.name
+        const value = event.target.value
+        this.setState({
+            [name]: value
+        })
+    }
+
+    async handleSubmit(e) {
+        e.preventDefault()
+        await axios.post(`http://localhost:3000/users/${this.props.id}/messages`, {
+            doctor: this.state.doctor,
+            description: this.state.description
+        })
+
+    
+    this.props.history.goBack()
+    }
 
 
 
 
+    render() {
 
-    render(){
-         
-        
-        return(<div>
 
-       <form>
-           <input type = "text" name = "doctor"/>
-           <input type = "text" name = "description"/>
-       </form>
+        return (<div>
+            <button onClick={() => { this.props.history.goBack() }}>Back</button>
+            <form onChange = {this.handleChange} onSubmit = {this.handleSubmit}>
+                Doctor: <input type="text" name="doctor" />
+                Message: <input type="text" name="description" />
+                <input type="submit" />
+            </form>
 
         </div>)
     }
