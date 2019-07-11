@@ -11,8 +11,7 @@ Rails.application.routes.draw do
   end
   
   # resources :users do
-  #   resources :doctors
-
+  # 
   # end
   
   

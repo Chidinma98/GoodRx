@@ -5,6 +5,7 @@ import SignUpForm from "./Components/SignUpForm";
 import Prescriptions from "./Components/Prescriptions"
 import Info from "./Components/Info"
 import Doctors from "./Components/Doctors"
+import Messages from "./Components/Messages"
 
 import axios from 'axios';
 import decode from 'jwt-decode';
@@ -124,6 +125,7 @@ class App extends Component {
             <Route exact path = "/prescriptions" render={((props) => <Prescriptions {...props} id = {this.state.currentUser.user_id}/>)}/>
             <Route exact path = "/info" render={((props) => <Info {...props} id = {this.state.currentUser.user_id}/>)}/>
             <Route exact path = "/doctors" render={((props) => <Doctors {...props} id = {this.state.currentUser.user_id}/>)}/>
+            <Route exact path = "/messages" render={((props) => <Messagess {...props} id = {this.state.currentUser.user_id}/>)}/>
             <Route exact path= '/home' render={()=> <div> this is the homepage </div>} />
 
           </Switch>
