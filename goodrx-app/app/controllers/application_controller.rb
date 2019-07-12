@@ -24,6 +24,9 @@ class ApplicationController < ActionController::API
           render json: { error: 'unauthorized' }, status: :unauthorized
         end
       end
-
+      
+      def index
+        render file: "#{Rails.root}/public/index.html"
+    end
 
 end
