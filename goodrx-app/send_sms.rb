@@ -13,9 +13,9 @@
 # body: "Trial 1!"
 # )
 
-client = Twilio::REST::Client.new
-client.messages.create({
-  from: '+17323147339',
-  to: '+19084942240',
-  body: 'Whats up doc'
-})
+# client = Twilio::REST::Client.new
+# client.messages.create({
+#   from: '+17323147339',
+#   to: '+19084942240',
+#   body: 'Whats up doc'
+# })

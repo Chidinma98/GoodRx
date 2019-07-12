@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios'
+import Button from 'react-bootstrap/Button'
+
 
 class Messages extends Component {
     constructor() {
@@ -41,7 +43,7 @@ console.log(res);
 
 
         return (<div>
-            <button onClick={() => { this.props.history.goBack() }}>Back</button>
+            <button  variant="link" onClick={() => { this.props.history.goBack() }}>Back</button>
             <form onChange = {this.handleChange} onSubmit = {this.handleSubmit}>
                 Doctor: <input type="text" name="doctor" />
                 Message: <input type="text" name="description" />

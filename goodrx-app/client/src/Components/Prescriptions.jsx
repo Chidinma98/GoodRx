@@ -40,7 +40,7 @@ class Prescriptions extends Component {
             })}</h1>
 
 
-
+<Link to = {`/prescriptionform`}><button>Add a Prescription</button></Link>
 
 
         </div>)

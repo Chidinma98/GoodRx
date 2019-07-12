@@ -6,6 +6,10 @@ import Prescriptions from "./Components/Prescriptions"
 import Info from "./Components/Info"
 import Doctors from "./Components/Doctors"
 import Messages from "./Components/Messages"
+import PrescriptionForm from "./Components/PrescriptionForm"
+//  import { Button } from 'react-bootstrap';
+
+import Carousel from 'react-bootstrap/Carousel'
 
 import axios from 'axios';
 import decode from 'jwt-decode';
@@ -14,25 +18,25 @@ class App extends Component {
   state = {
     currentUser: {},
   }
-  componentDidMount() {  
+  componentDidMount() {
     // 1. check if there is token saved in localStorage at "jwt"
     const token = localStorage.getItem('jwt')
     // 2. if there is, decode it and save the object to currentUser state
-    if (token){
+    if (token) {
       this.setState({
         currentUser: decode(token)
       })
 
 
     }
-    
- 
+
+
   }
 
-  handleLogin = async (data)=> {
+  handleLogin = async (data) => {
     const res = await axios.post('http://localhost:3000/auth/login', data)
     // 2. Retrieve token from response object
-    const {token} = res.data
+    const { token } = res.data
     // 3. save token to local storage at key 'jwt'
     localStorage.setItem("jwt", token)
 
@@ -50,7 +54,7 @@ class App extends Component {
 
   }
 
-  handleLogout = ()=>{
+  handleLogout = () => {
     // 1. remove jwt from local storage
     localStorage.removeItem('jwt')
     // 2. clear currentUser in state to empty object
@@ -61,11 +65,11 @@ class App extends Component {
 
   }
 
-  handleSignUp = async  (data)=> {
+  handleSignUp = async (data) => {
     // 1. submit form data to the appropriate endpoint
     const res = await axios.post('http://localhost:3000/users', data)
     // 2. Retrieve token from response object
-    const {token} = res.data
+    const { token } = res.data
     // 3. save token to local storage at key 'jwt'
     localStorage.setItem("jwt", token)
 
@@ -76,57 +80,66 @@ class App extends Component {
 
   }
 
- 
-  
+
+
 
   render() {
-    const {currentUser} = this.state;
+    const { currentUser } = this.state;
     const userIsLoggedIn = currentUser.user_id
-    
+
     return (
+
+
+     
       <Router>
+
+
+
+
+
+
+
+
+
+
+
+
         <div className="App">
 
 
-    {userIsLoggedIn? <Redirect to='/info'/>: <Redirect to = '/'/> } 
+          {userIsLoggedIn ? <Redirect to='/info' /> : <Redirect to='/' />}
 
 
           <header>
-            
-{userIsLoggedIn ? 
-<a  onClick={this.handleLogout}> Log Out </a > : 
-<nav> <Link to='/signup'>Sign Up</Link> <Link to='/login'>Log in</Link></nav> }         
 
-   <div> {currentUser.user_id && `Hello ${currentUser.username}`} </div>
+            {userIsLoggedIn ?
+              <a onClick={this.handleLogout}> Log Out </a > :
 
-       
-            
-            <h1>
-               {/* <Link
-                to="/"
-                onClick={() =>
-                  this.setState({
-                    teacherForm: {
-                      name: "",
-                      photo: ""
-                    }
-                  })
-                }
-              >
-                Auth App
-              </Link>  */}
+              <nav> <Link to='/signup'>Sign Up</Link> <Link to='/login'>Log in</Link></nav>}
 
-            </h1>
-          {/* <h2> <Link to = {`/prescriptions`}> My Prescriptions </Link> </h2> */}
+            <div> {currentUser.user_id && `Hello ${currentUser.username}`} </div>
+
+
+           <div>
+
+
+           </div>
           </header>
+         
+          
+          
+          
+          
+          
           <Switch>
             <Route exact path="/login" render={(props) => <LoginForm {...props} handleLogin={this.handleLogin} />} />
             <Route exact path="/signup" render={() => <SignUpForm handleSignUp={this.handleSignUp} />} />
-            <Route exact path = "/prescriptions" render={((props) => <Prescriptions {...props} id = {this.state.currentUser.user_id}/>)}/>
-            <Route exact path = "/info" render={((props) => <Info {...props} id = {this.state.currentUser.user_id}/>)}/>
-            <Route exact path = "/doctors" render={((props) => <Doctors {...props} id = {this.state.currentUser.user_id}/>)}/>
-            <Route exact path = "/messages" render={((props) => <Messages {...props} id = {this.state.currentUser.user_id}/>)}/>
-            <Route exact path= '/home' render={()=> <div> this is the homepage </div>} />
+            <Route exact path="/prescriptions" render={((props) => <Prescriptions {...props} id={this.state.currentUser.user_id} />)} />
+            <Route exact path="/info" render={((props) => <Info {...props} id={this.state.currentUser.user_id} />)} />
+            <Route exact path="/doctors" render={((props) => <Doctors {...props} id={this.state.currentUser.user_id} />)} />
+            <Route exact path="/messages" render={((props) => <Messages {...props} id={this.state.currentUser.user_id} />)} />
+            <Route exact path='/' render={((props) => <Carousel {...props} id={this.state.currentUser.user_id} />)} />
+            <Route exact path='/prescriptionform' render={((props) => <PrescriptionForm {...props} id={this.state.currentUser.user_id} />)} />
 
           </Switch>
         </div>
