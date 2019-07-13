@@ -45,7 +45,7 @@ class Info extends Component{
         
           title="Contemplative Reptile"
         /> 
-         {<img src = {'../images/pill2.jpg'}/>}
+
         <CardContent>
         <Link to = {'/prescriptions'}> <Typography gutterBottom variant="h5" component="h2">
             Prescriptions

@@ -24,90 +24,90 @@ export default function MediaCard() {
   const classes = useStyles();
 
   return (
-    
 
-      <div className = "container">
-          <div className = "boxes">A
+
+    <div className="container">
+      <div className="boxes">A
            <Card className={classes.card}>
-      <CardActionArea>
-       <CardMedia
-          className={classes.media}
-          image= {require('../images/pill2.jpg')}
-          title="Contemplative Reptile"
-        /> 
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Prescriptions
+          <CardActionArea>
+            <CardMedia
+              className={classes.media}
+              image={require('../images/pill2.jpg')}
+              title="Contemplative Reptile"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                Prescriptions
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-           View All your Prescriptions. Add new medications, or simply delete old ones.
+              <Typography variant="body2" color="textSecondary" component="p">
+                View All your Prescriptions. Add new medications, or simply delete old ones.
           </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-       
-      <Link to = {'/prescriptions'}>  <Button size="small" color="primary">
-          Learn More
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+
+            <Link to={'/prescriptions'}>  <Button size="small" color="primary">
+              Learn More
         </Button> </Link>
-      </CardActions>
-    </Card>
-    
-    
-    
-    </div>
-    <div className = "boxes">B
+          </CardActions>
+        </Card>
+
+
+
+      </div>
+      <div className="boxes">B
     <Card className={classes.card}>
-      <CardActionArea>
-       <Link to = {'/messages'}></Link> <CardMedia
-          className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Messages
+          <CardActionArea>
+            <Link to={'/messages'}></Link> <CardMedia
+              className={classes.media}
+              image={require('../images/text.jpg')}
+              title="Contemplative Reptile"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                Messages
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-          Have Questions or Concerns about you Medication? Send an SMS directly to your doctor in real time.
+              <Typography variant="body2" color="textSecondary" component="p">
+                Have Questions or Concerns about you Medication? Send an SMS directly to your doctor in real time.
           </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-       
-        <Link to = {'/messages'}> <Button size="small" color="primary">
-          Learn More
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+
+            <Link to={'/messages'}> <Button size="small" color="primary">
+              Learn More
         </Button> </Link>
-      </CardActions>
-    </Card>
-    </div>
-    
-    
-    <div className = "boxes">C
+          </CardActions>
+        </Card>
+      </div>
+
+
+      <div className="boxes">C
     <Card className={classes.card}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Pharmacies
+          <CardActionArea>
+            <CardMedia
+              className={classes.media}
+              image="/static/images/cards/contemplative-reptile.jpg"
+              title="Contemplative Reptile"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                Pharmacies
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-        See All your saved pharmacies. Contact them about medication info and much more.
+              <Typography variant="body2" color="textSecondary" component="p">
+                See All your saved pharmacies. Contact them about medication info and much more.
           </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        
-        <Button size="small" color="primary">
-          Learn More
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+
+            <Button size="small" color="primary">
+              Learn More
         </Button>
-      </CardActions>
-    </Card>
+          </CardActions>
+        </Card>
+      </div>
     </div>
-  </div>
   );
 }
 
