@@ -8,12 +8,30 @@ import Doctors from "./Components/Doctors"
 import Messages from "./Components/Messages"
 import PrescriptionForm from "./Components/PrescriptionForm"
 import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+// import './App.css';
 
 
- import Carousel from "./Components/Carousel"
+import Carousel from "./Components/Carousel"
 
 import axios from 'axios';
 import decode from 'jwt-decode';
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));
 
 class App extends Component {
   state = {
@@ -87,23 +105,11 @@ class App extends Component {
   render() {
     const { currentUser } = this.state;
     const userIsLoggedIn = currentUser.user_id
-
+    const { classes } = this.props
     return (
 
 
-     
       <Router>
-
-
-
-
-
-
-
-
-
-
-
 
         <div className="App">
 
@@ -113,21 +119,43 @@ class App extends Component {
 
           <header>
 
-            {userIsLoggedIn ?
+            {/* {userIsLoggedIn ?
               <a onClick={this.handleLogout}> Log Out </a > :
 
-              <nav> <Link to='/signup'>Sign Up</Link> <Link to='/login'>Log in</Link> </nav>}
+              <nav> <Link to='/signup'>Sign Up</Link> <Link to='/login'>Log in</Link> </nav>} */}
 
-            <div> {currentUser.user_id && `Hello ${currentUser.username}`} </div>
+            <div className={this.props.root}>
+
+              <AppBar position="static">
+
+                <Toolbar>
+                  {userIsLoggedIn ?
+                    <Button color="inherit" onClick={this.handleLogout}> Log Out </Button> :
+
+                    <nav>  <Button color="inherit"><Link to='/signup'> Sign Up </Link>  </Button>    <Button color="inherit" > <Link to='/login'>Login </Link></Button></nav>
+
+                  }
+
+
+
+                </Toolbar>
+              </AppBar>
+
+              <Typography variant="h6" className={this.props.title}>
+                {currentUser.user_id && `Hello ${currentUser.username}`}
+              </Typography>
+            </div>
+
+
 
 
           </header>
-         
-          
-          
-          
-          
-          
+
+
+
+
+
+
           <Switch>
             <Route exact path="/login" render={(props) => <LoginForm {...props} handleLogin={this.handleLogin} />} />
             <Route exact path="/signup" render={() => <SignUpForm handleSignUp={this.handleSignUp} />} />
@@ -137,7 +165,7 @@ class App extends Component {
             <Route exact path="/messages" render={((props) => <Messages {...props} id={this.state.currentUser.user_id} />)} />
             {/* <Route exact path='/' render={((props) => <Carousel {...props} id={this.state.currentUser.user_id} />)} /> */}
             <Route exact path='/prescriptionform' render={((props) => <PrescriptionForm {...props} id={this.state.currentUser.user_id} />)} />
-      <Route exact path= "/carousel" component = {Carousel}></Route> 
+            <Route exact path="/carousel" component={Carousel}></Route>
 
           </Switch>
         </div>
