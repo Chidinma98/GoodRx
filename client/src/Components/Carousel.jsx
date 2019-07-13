@@ -1,45 +1,145 @@
-// import React from 'react';
-// import { Link } from "react-router-dom";
-// import { makeStyles } from '@material-ui/core/styles';
-// import AppBar from '@material-ui/core/AppBar';
-// import Toolbar from '@material-ui/core/Toolbar';
-// import Typography from '@material-ui/core/Typography';
-// import IconButton from '@material-ui/core/IconButton';
-// // import MenuIcon from '@material-ui/icons/Menu';
-// import Button from '@material-ui/core/Button';
 
-// const useStyles = makeStyles(theme => ({
-//   root: {
-//     flexGrow: 1,
-//   },
-//   menuButton: {
-//     marginRight: theme.spacing(2),
-//   },
-//   title: {
-//     flexGrow: 1,
-//   },
-// }));
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import { Link } from "react-router-dom";
+import '../App.css';
 
-// export default function ButtonAppBar() {
-//   const classes = useStyles();
+const useStyles = makeStyles({
+  card: {
+    maxWidth: 345,
+  },
+  media: {
+    height: 145,
+  },
+});
 
-//   return (
-//      <div className={this.props.root}>
-     
-//     //   <AppBar position="static">
-        
-//     //     <Toolbar>
-//     //       { userIsLoggedIn ?
-//     //       <Button color="inherit" onClick={this.handleLogout}> Log Out </Button> :
+export default function MediaCard() {
+  const classes = useStyles();
+
+  return (
+    
+
+      <div className = "container">
+          <div className = "boxes">A
+           <Card className={classes.card}>
+      <CardActionArea>
+       <CardMedia
+          className={classes.media}
+          image= {require('../images/pill2.jpg')}
+          title="Contemplative Reptile"
+        /> 
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            Prescriptions
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+           View All your Prescriptions. Add new medications, or simply delete old ones.
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
        
-//     //       <nav><Button color="inherit"><Link to='/signup'>Sign Up</Link></Button> <Button color="inherit" > <Link to='/login'>Login </Link></Button></nav> 
-         
-//     //          }   
-             
-             
-             
-//     //          </Toolbar>
-//     //   </AppBar>
-//    </div>
+      <Link to = {'/prescriptions'}>  <Button size="small" color="primary">
+          Learn More
+        </Button> </Link>
+      </CardActions>
+    </Card>
+    
+    
+    
+    </div>
+    <div className = "boxes">B
+    <Card className={classes.card}>
+      <CardActionArea>
+       <Link to = {'/messages'}></Link> <CardMedia
+          className={classes.media}
+          image="/static/images/cards/contemplative-reptile.jpg"
+          title="Contemplative Reptile"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            Messages
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+          Have Questions or Concerns about you Medication? Send an SMS directly to your doctor in real time.
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+       
+        <Link to = {'/messages'}> <Button size="small" color="primary">
+          Learn More
+        </Button> </Link>
+      </CardActions>
+    </Card>
+    </div>
+    
+    
+    <div className = "boxes">C
+    <Card className={classes.card}>
+      <CardActionArea>
+        <CardMedia
+          className={classes.media}
+          image="/static/images/cards/contemplative-reptile.jpg"
+          title="Contemplative Reptile"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            Pharmacies
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+        See All your saved pharmacies. Contact them about medication info and much more.
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        
+        <Button size="small" color="primary">
+          Learn More
+        </Button>
+      </CardActions>
+    </Card>
+    </div>
+  </div>
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React from 'react';
+// import CssBaseline from '@material-ui/core/CssBaseline';
+// import Typography from '@material-ui/core/Typography';
+// import Container from '@material-ui/core/Container';
+// import '../App.css';
+
+// export default function SimpleContainer() {
+//   return (
+//  <div className = "container">
+//    <div className = "boxes">A</div>
+//    <div className = "boxes">B</div>
+//    <div className = "boxes">C</div>
+//  </div>
 //   );
-//  }
+// }
+
+
+

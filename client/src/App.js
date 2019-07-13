@@ -13,7 +13,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-// import './App.css';
+ import './App.css';
 
 
 import Carousel from "./Components/Carousel"
@@ -114,7 +114,7 @@ class App extends Component {
         <div className="App">
 
 
-          {userIsLoggedIn ? <Redirect to='/info' /> : <Redirect to='/' />}
+          {userIsLoggedIn ? <Redirect to='/carousel' /> : <Redirect to='/' />}
 
 
           <header>
