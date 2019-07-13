@@ -13,6 +13,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
+import Material from './Components/Material'
  import './App.css';
 
 
@@ -163,6 +164,7 @@ class App extends Component {
             {/* <Route exact path='/' render={((props) => <Carousel {...props} id={this.state.currentUser.user_id} />)} /> */}
             <Route exact path='/prescriptionform' render={((props) => <PrescriptionForm {...props} id={this.state.currentUser.user_id} />)} />
             <Route exact path="/carousel" component={Carousel}></Route>
+            <Route exact path="/material" component={Material}></Route>
 
           </Switch>
         </div>

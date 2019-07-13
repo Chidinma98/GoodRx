@@ -87,7 +87,7 @@ export default function MediaCard() {
           <CardActionArea>
             <CardMedia
               className={classes.media}
-              image={require('../images/phargit.jpg')}
+              image={require('../images/phar.jpg')}
               title="Contemplative Reptile"
             />
             <CardContent>
@@ -95,15 +95,15 @@ export default function MediaCard() {
                 Pharmacies
           </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-                See All your saved pharmacies. Contact them about medication infotmation and much more.
+                See All your saved pharmacies. Contact them about medication information and much more.
           </Typography>
             </CardContent>
           </CardActionArea>
           <CardActions>
 
-            <Button size="small" color="primary">
+           <Link to = {'/material'}> <Button size="small" color="primary">
               Learn More
-        </Button>
+        </Button></Link>
           </CardActions>
         </Card>
       </div>
