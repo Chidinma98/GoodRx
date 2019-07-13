@@ -68,6 +68,8 @@ class SignUpForm extends Component {
         }
 
         this.props.handleSignUp(this.state)
+
+  
     }
 
     render() {

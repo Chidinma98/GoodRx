@@ -6738,3 +6738,141 @@ NoMethodError (undefined method `authenticate' for nil:NilClass):
   
 app/controllers/application_controller.rb:20:in `handle_login'
 app/controllers/authentication_controller.rb:4:in `login'
+Started POST "/users" for ::1 at 2019-07-13 12:52:33 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"", "email"=>"", "phone_number"=>"", "password"=>"[FILTERED]", "passwordConfirm"=>"[FILTERED]", "user"=>{"username"=>"", "email"=>"", "phone_number"=>""}}
+  [1m[35m (3.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (4.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (3.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[35m (3.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:21
+Completed 422 Unprocessable Entity in 691ms (Views: 5.5ms | ActiveRecord: 16.4ms)
+
+
+Started POST "/users" for ::1 at 2019-07-13 12:53:34 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"", "email"=>"", "phone_number"=>"", "password"=>"[FILTERED]", "passwordConfirm"=>"[FILTERED]", "user"=>{"username"=>"", "email"=>"", "phone_number"=>""}}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[35m (1.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:21
+Completed 422 Unprocessable Entity in 235ms (Views: 8.2ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/users" for ::1 at 2019-07-13 12:53:57 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"", "email"=>"", "phone_number"=>"", "password"=>"[FILTERED]", "passwordConfirm"=>"[FILTERED]", "user"=>{"username"=>"", "email"=>"", "phone_number"=>""}}
+  [1m[35m (3.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (3.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:21
+Completed 422 Unprocessable Entity in 167ms (Views: 0.4ms | ActiveRecord: 8.2ms)
+
+
+Started POST "/users" for ::1 at 2019-07-13 12:56:12 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"", "email"=>"", "phone_number"=>"", "password"=>"[FILTERED]", "passwordConfirm"=>"[FILTERED]", "user"=>{"username"=>"", "email"=>"", "phone_number"=>""}}
+  [1m[35m (3.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[35m (4.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:21
+Completed 422 Unprocessable Entity in 239ms (Views: 12.8ms | ActiveRecord: 10.8ms)
+
+
+Started POST "/users" for ::1 at 2019-07-13 12:56:40 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"", "email"=>"", "phone_number"=>"", "password"=>"[FILTERED]", "passwordConfirm"=>"[FILTERED]", "user"=>{"username"=>"", "email"=>"", "phone_number"=>""}}
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (3.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:21
+Completed 422 Unprocessable Entity in 195ms (Views: 0.3ms | ActiveRecord: 8.2ms)
+
+
+Started POST "/users" for ::1 at 2019-07-13 12:58:49 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"javascript", "email"=>"hg@fakemail.com", "phone_number"=>"908-567-5643", "password"=>"[FILTERED]", "passwordConfirm"=>"[FILTERED]", "user"=>{"username"=>"javascript", "email"=>"hg@fakemail.com", "phone_number"=>"908-567-5643"}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "javascript"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hg@fakemail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "908-567-5643"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Create (8.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "phone_number", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "javascript"], ["email", "hg@fakemail.com"], ["phone_number", "908-567-5643"], ["password_digest", "$2a$12$SNs4SSVFILdn1uZTz7aZs.8FLr9v/pi1JtYoOm0xLOfgO13Iz4mD6"], ["created_at", "2019-07-13 16:58:50.333843"], ["updated_at", "2019-07-13 16:58:50.333843"]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "javascript"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+Completed 200 OK in 1163ms (Views: 3.8ms | ActiveRecord: 20.2ms)
+
+
+Started POST "/auth/login" for ::1 at 2019-07-13 12:59:01 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"password"=>"[FILTERED]", "username"=>"javascript", "authentication"=>{"password"=>"[FILTERED]", "username"=>"javascript"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "javascript"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+Completed 200 OK in 328ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/4/prescriptions" for ::1 at 2019-07-13 12:59:06 -0400
+Processing by PrescriptionsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:6
+  [1m[36mPrescription Load (2.6ms)[0m  [1m[34mSELECT "prescriptions".* FROM "prescriptions" WHERE "prescriptions"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/prescriptions_controller.rb:8
+Completed 200 OK in 63ms (Views: 20.8ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/users/4/prescriptions" for ::1 at 2019-07-13 12:59:57 -0400
+Processing by PrescriptionsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:6
+  [1m[36mPrescription Load (3.1ms)[0m  [1m[34mSELECT "prescriptions".* FROM "prescriptions" WHERE "prescriptions"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/prescriptions_controller.rb:8
+Completed 200 OK in 80ms (Views: 46.0ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/users/4/prescriptions" for ::1 at 2019-07-13 13:00:08 -0400
+Processing by PrescriptionsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:6
+  [1m[36mPrescription Load (0.5ms)[0m  [1m[34mSELECT "prescriptions".* FROM "prescriptions" WHERE "prescriptions"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/prescriptions_controller.rb:8
+Completed 200 OK in 22ms (Views: 7.5ms | ActiveRecord: 1.1ms)
+
+

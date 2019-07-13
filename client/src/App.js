@@ -119,10 +119,7 @@ class App extends Component {
 
           <header>
 
-            {/* {userIsLoggedIn ?
-              <a onClick={this.handleLogout}> Log Out </a > :
 
-              <nav> <Link to='/signup'>Sign Up</Link> <Link to='/login'>Log in</Link> </nav>} */}
 
             <div className={this.props.root}>
 
