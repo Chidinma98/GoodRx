@@ -19,6 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 1.day, :at => '4:00 pm' do
-    runner "MyModel.task_to_run_at_four_thirty_in_the_morning"
-  end
+# every 1.day, :at => '4:49 pm' do
+#     runner "MyModel.task_to_run_at_four_thirty_in_the_morning"
+#   end

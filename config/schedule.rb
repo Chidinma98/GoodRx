@@ -19,7 +19,7 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 1.day, :at => '4:28 pm' do
+every 1.day, :at => '10:00 pm' do
     rake "send_text"
   end
   

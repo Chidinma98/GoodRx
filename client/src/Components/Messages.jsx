@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios'
-import Button from 'react-bootstrap/Button'
-
+import TextareaAutosize from '@material-ui/core/TextareaAutosize'
+import Button from '@material-ui/core/Button';
 
 class Messages extends Component {
     constructor() {
@@ -43,10 +43,12 @@ console.log(res);
 
 
         return (<div>
-            <button  variant="link" onClick={() => { this.props.history.goBack() }}>Back</button>
+            <Button  variant="link" onClick={() => { this.props.history.goBack() }}>Back</Button>
             <form onChange = {this.handleChange} onSubmit = {this.handleSubmit}>
                 Doctor: <input type="text" name="doctor" />
-                Message: <input type="text" name="description" />
+              Message:  <TextareaAutosize aria-label="Minimum height" rows={3} placeholder="Enter Message" name ="description"/>
+            
+                {/* Message: <input type="text" name="description" /> */}
                 <input type="submit" />
             </form>
 

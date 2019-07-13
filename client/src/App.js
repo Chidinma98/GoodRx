@@ -7,9 +7,10 @@ import Info from "./Components/Info"
 import Doctors from "./Components/Doctors"
 import Messages from "./Components/Messages"
 import PrescriptionForm from "./Components/PrescriptionForm"
-//  import { Button } from 'react-bootstrap';
+import Button from '@material-ui/core/Button';
 
-import Carousel from 'react-bootstrap/Carousel'
+
+ import Carousel from "./Components/Carousel"
 
 import axios from 'axios';
 import decode from 'jwt-decode';
@@ -115,15 +116,11 @@ class App extends Component {
             {userIsLoggedIn ?
               <a onClick={this.handleLogout}> Log Out </a > :
 
-              <nav> <Link to='/signup'>Sign Up</Link> <Link to='/login'>Log in</Link></nav>}
+              <nav> <Link to='/signup'>Sign Up</Link> <Link to='/login'>Log in</Link> </nav>}
 
             <div> {currentUser.user_id && `Hello ${currentUser.username}`} </div>
 
 
-           <div>
-
-
-           </div>
           </header>
          
           
@@ -138,8 +135,9 @@ class App extends Component {
             <Route exact path="/info" render={((props) => <Info {...props} id={this.state.currentUser.user_id} />)} />
             <Route exact path="/doctors" render={((props) => <Doctors {...props} id={this.state.currentUser.user_id} />)} />
             <Route exact path="/messages" render={((props) => <Messages {...props} id={this.state.currentUser.user_id} />)} />
-            <Route exact path='/' render={((props) => <Carousel {...props} id={this.state.currentUser.user_id} />)} />
+            {/* <Route exact path='/' render={((props) => <Carousel {...props} id={this.state.currentUser.user_id} />)} /> */}
             <Route exact path='/prescriptionform' render={((props) => <PrescriptionForm {...props} id={this.state.currentUser.user_id} />)} />
+      <Route exact path= "/carousel" component = {Carousel}></Route> 
 
           </Switch>
         </div>

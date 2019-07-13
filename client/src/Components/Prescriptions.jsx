@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios'
+import Button from '@material-ui/core/Button';
 
 class Prescriptions extends Component {
     constructor(props) {
@@ -27,7 +28,8 @@ class Prescriptions extends Component {
 
 
         return (<div>
-            <button onClick={() => { this.props.history.goBack() }}>Back</button>
+       
+            <Button onClick={() => { this.props.history.goBack() }} variant="contained" color="primary">Back</Button>
             <h1>{prescriptions.map((prescription, index) => {
                 return (<p key={prescription.id}>Name:{prescription.name}| 
                 Dosage:{prescription.dosage} | Time:{prescription.medication_time}
@@ -40,7 +42,7 @@ class Prescriptions extends Component {
             })}</h1>
 
 
-<Link to = {`/prescriptionform`}><button>Add a Prescription</button></Link>
+<Link to = {`/prescriptionform`}><Button variant="contained" color="primary">Add a Prescription</Button></Link>
 
 
         </div>)

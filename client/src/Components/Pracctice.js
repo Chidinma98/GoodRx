@@ -1,6 +1,4 @@
-import React, { Component } from "react";
-
-
+import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -10,9 +8,11 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
+// import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+
 
 
 const useStyles = makeStyles(theme => ({
@@ -40,30 +40,11 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-
-
-class LoginForm extends Component {
-  state = {
-    password: "",
-    username: ""
-  };
-
-  handleChange = e => {
-    const { name, value } = e.target;
-    this.setState({
-      [name]: value
-    });
-  };
-
+export default function SignIn() {
   
 
-  render() {
-    const { classes } = this.props
-  
-   
-    return (
-     
-      <Container component="main" maxWidth="xs">
+  return (
+    <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={this.props.paper}>
         <Avatar className={this.props.avatar}>
@@ -72,29 +53,22 @@ class LoginForm extends Component {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form onSubmit={e => {
-            e.preventDefault();
-            this.props.handleLogin(this.state);
-           
-          }} className={this.props.form} noValidate>
+        <form className={this.props.form} noValidate>
           <TextField
-           value={this.state.username}
-           onChange={this.handleChange}
             variant="outlined"
             margin="normal"
             required
             fullWidth
-            id="username"
-            label="username"
-            name="username"
-            autoComplete="username"
+            id="name"
+            label="name"
+            name="name"
+            autoComplete="name"
             autoFocus
-           
+            value={this.state.username}
+            onChange={this.handleChange}
           
           />
           <TextField
-          value={this.state.password}
-          onChange={this.handleChange}
             variant="outlined"
             margin="normal"
             required
@@ -104,7 +78,8 @@ class LoginForm extends Component {
             type="password"
             id="password"
             autoComplete="current-password"
-          
+            value={this.state.password}
+            onChange={this.handleChange}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
@@ -135,8 +110,5 @@ class LoginForm extends Component {
       </div>
      
     </Container>
-    );
-  }
+  );
 }
-
-export default LoginForm;
