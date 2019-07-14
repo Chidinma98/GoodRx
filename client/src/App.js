@@ -146,8 +146,12 @@ class App extends Component {
 
                   }
 
+<div className = "title">
+<Typography gutterBottom variant="h5" component="h2" align="center" >
+                Wellness_Rx
+          </Typography>
 
-
+          </div>
                 </Toolbar>
               </AppBar>
 
@@ -189,7 +193,7 @@ class App extends Component {
         </div>
        <div className = "foot">
         <BottomNavigation
-      
+      color="primary"
       showLabels
       className={this.props.iconic}
     >
