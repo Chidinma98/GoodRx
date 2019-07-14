@@ -25,6 +25,7 @@ class Papers extends Component {
     super(props);
     this.state = {
       time:"",
+      dosage:"",
       name:"",
       pharmacy:"",
       prescriber:"",
@@ -48,7 +49,8 @@ class Papers extends Component {
         prescriber: prescription.prescriber,
         prescriber_phone: prescription.prescriber_phone,
         specialty:prescription.prescriber_specialization,
-        purpose:prescription.purpose
+        purpose:prescription.purpose,
+        dosage: prescription.dosage
     })
     
     
@@ -78,76 +80,74 @@ class Papers extends Component {
                 <Grid container spacing={3}>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  required
-                  
-                  name="firstName"
-                  // label="Medication Time"
+                  name="dosage"
+                  label="Dosage"
                   fullWidth
                   autoComplete="fname"
-                  value={med.time}
+                  value={med.dosage}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  required
-                  id="lastName"
-                  name="lastName"
-                  label="Last name"
+               
+                  
+                  name="medication_time"
+                  type = "text"
+                  label="Time Taken"
+                  value= {med.time}
                   fullWidth
                   autoComplete="lname"
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  required
-                  id="address1"
-                  name="address1"
-                  label="Address line 1"
+                  name="purpose"
+                  label="Purpose"
+                  value = {med.purpose}
                   fullWidth
-                  autoComplete="billing address-line1"
+                 
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  id="address2"
-                  name="address2"
-                  label="Address line 2"
+                
+                  name="pharmacy"
+                  label="Pharmacy"
+                  value = {med.pharmacy}
                   fullWidth
-                  autoComplete="billing address-line2"
+                  
+                />
+              </Grid>
+              <Grid item xs={12} >
+                <TextField
+                 
+                  
+                  name="prescriber"
+                  label= "Prescriber"
+                  value = {`Dr. ${med.prescriber}`}
+                  fullWidth
+                
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  id="city"
-                  name="city"
-                  label="p"
-                  value = "practicegfc"
-                  fullWidth
-                  autoComplete="billing address-level2"
-                />
+                <TextField 
+                id="state" 
+                name="prescriber_specialization" 
+                label="Specialization" 
+      
+                value = {med.specialty}
+                fullWidth />
               </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField id="state" name="state" label="State/Province/Region" fullWidth />
-              </Grid>
+           
               <Grid item xs={12} sm={6}>
                 <TextField
-                  required
-                  id="zip"
-                  name="zip"
-                  label="Zip / Postal code"
+                  
+                 
+                  name="prescriber_specialization"
+                  label="Phone Number"
+                  value = {med.prescriber_phone}
                   fullWidth
-                  autoComplete="billing postal-code"
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  id="country"
-                  name="country"
-                  label="Country"
-                  fullWidth
-                  autoComplete="billing country"
+                  
                 />
               </Grid>
 
