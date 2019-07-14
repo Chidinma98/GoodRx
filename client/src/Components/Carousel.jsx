@@ -101,7 +101,7 @@ export default function MediaCard() {
           </CardActionArea>
           <CardActions>
 
-           <Link to = {'/material'}> <Button size="small" color="primary">
+           <Link to = {'/papers'}> <Button size="small" color="primary">
               Learn More
         </Button></Link>
           </CardActions>

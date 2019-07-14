@@ -15,7 +15,9 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import Material from './Components/Material'
 import Medication from './Components/Medication'
- import './App.css';
+import Practice from './Components/Practice'
+import Papers from './Components/Papers'
+import './App.css';
 
 
 import Carousel from "./Components/Carousel"
@@ -166,8 +168,9 @@ class App extends Component {
             <Route exact path='/prescriptionform' render={((props) => <PrescriptionForm {...props} id={this.state.currentUser.user_id} />)} />
             <Route exact path="/carousel" component={Carousel}></Route>
             <Route exact path="/material" component={Material}></Route>
-            <Route exact path ="/users/:id/prescriptions/:id" render={((props) => <Medication {...props} id={this.state.currentUser.user_id} />)} />
-
+            <Route exact path ="/users/:id/prescriptions/:id" render={((props) => <Papers {...props} id={this.state.currentUser.user_id} />)} />
+            <Route exact path="/practice" component={Practice}></Route>
+       
           </Switch>
         </div>
       </Router>

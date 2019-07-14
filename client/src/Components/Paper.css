@@ -1,0 +1,44 @@
+h2 {
+    text-align: center;
+}
+
+.paper-add-product {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    align-items: center;
+}
+
+.add-update-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.outlined-with-placeholder {
+    width: 100%;
+}
+
+.add-update-product {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paper-container {
+    width: 100%;
+}
+
+.add-update-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
