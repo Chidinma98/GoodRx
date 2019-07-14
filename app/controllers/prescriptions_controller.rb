@@ -28,6 +28,8 @@ class PrescriptionsController < ApplicationController
 
   # PATCH/PUT /prescriptions/1
   def update
+    @user = User.find params[:user_id]
+  @prescription = @user.prescriptions.where(id: params[:id])
     if @prescription.update(prescription_params)
       render json: @prescription
     else
@@ -39,6 +41,9 @@ class PrescriptionsController < ApplicationController
   def destroy
     @prescription.destroy
   end
+
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

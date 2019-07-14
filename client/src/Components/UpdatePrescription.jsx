@@ -49,7 +49,7 @@ handleChange(event){
 
 async handleSubmit(e){
     e.preventDefault()
-    await axios.put(`http://localhost:3000/users/${this.props.id}/prescriptions`,{
+    await axios.put(`http://localhost:3000/users/${this.props.id}/${this.props.history.location.pathname}`,{
 name: this.state.name,
 dosage:this.state.dosage,
 medication_time:this.state.medication_time,
