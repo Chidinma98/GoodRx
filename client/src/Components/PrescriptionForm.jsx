@@ -25,6 +25,7 @@ dosage:"",
 medication_time:"",
 purpose:"",
 pharmacy:"",
+prescriber:"",
 prescriber_specialization:"",
 prescriber_phone:""
 
@@ -52,6 +53,7 @@ dosage:this.state.dosage,
 medication_time:this.state.medication_time,
 purpose: this.state.purpose,
 pharmacy: this.state.pharmacy,
+prescriber: this.state.prescriber,
 prescriber_specialization:this.state.prescriber_specialization,
 prescriber_phone:this.state.prescriber_phone
 
@@ -93,7 +95,7 @@ render(){
                              name="dosage"
                              label="Dosage"
                              fullWidth
-                             autoComplete="fname"
+                            
                              
                            />
                          </Grid>
@@ -139,7 +141,7 @@ render(){
                          </Grid>
                          <Grid item xs={12} sm={6}>
                            <TextField
-                             id="state"
+                           
                              name="prescriber_specialization"
                              label="Specialization"
      
@@ -151,7 +153,7 @@ render(){
                            <TextField
      
      
-                             name="prescriber_specialization"
+                             name="prescriber_phone"
                              label="Phone Number"
                              
                              fullWidth

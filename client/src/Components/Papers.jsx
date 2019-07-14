@@ -132,11 +132,11 @@ class Papers extends Component {
                     </Grid>
                     <Grid item xs={12} sm={6}>
                       <TextField
-                        id="state"
-                        name="prescriber_specialization"
-                        label="Specialization"
+                       
+                        name="prescriber_phone"
+                        label="Phone"
 
-                        value={med.specialty}
+                        value={med.prescriber_phone}
                         fullWidth />
                     </Grid>
 
@@ -145,8 +145,8 @@ class Papers extends Component {
 
 
                         name="prescriber_specialization"
-                        label="Phone Number"
-                        value={med.prescriber_phone}
+                        label="Specialty"
+                        value={med.specialty}
                         fullWidth
 
                       />
