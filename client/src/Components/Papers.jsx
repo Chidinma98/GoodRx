@@ -5,6 +5,8 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import Grid from '@material-ui/core/Grid';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 
 
 import { withStyles } from "@material-ui/core/styles";
@@ -162,7 +164,15 @@ class Papers extends Component {
                 </form>
               </div>
 
+              <br/>
+
+              <FormControlLabel
+            control={<Checkbox value="remember" color="primary" />}
+            label="Set Alert"
+          />
+
               <br />
+
               <nav> <Link to={`/prescriptions/${med.id}`}> <Button>Edit</Button> </Link> <Button>Delete</Button> </nav>
 
 

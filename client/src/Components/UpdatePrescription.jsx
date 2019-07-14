@@ -5,6 +5,8 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import Grid from '@material-ui/core/Grid';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 
 
 import { withStyles } from "@material-ui/core/styles";
@@ -39,7 +41,7 @@ class UpdatePrescription extends Component {
 
 
   async componentDidMount() {
-    const res = await axios.get(`http://localhost:3000/${this.props.history.location.pathname}`)
+    const res = await axios.get(`http://localhost:3000/users/${this.props.id}/${this.props.history.location.pathname}`)
     const prescription = res.data.med
     // console.log(prescription)
     this.setState({
@@ -159,6 +161,13 @@ class UpdatePrescription extends Component {
 
                 </form>
               </div>
+              <br/>
+
+              <FormControlLabel
+            control={<Checkbox value="remember" color="primary" />}
+            label="Set Alert"
+          />
+
 
               <br />
               <nav> <Button>Edit</Button> <Button>Delete</Button> </nav>

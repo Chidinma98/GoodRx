@@ -7,6 +7,8 @@ import Paper from "@material-ui/core/Paper";
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from "@material-ui/core/styles";
 import "./Paper.css";
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 
 const StyledPaper = withStyles({
     root: {
@@ -164,6 +166,12 @@ render(){
      
      
                        </Grid>
+                       <br/>
+                       <FormControlLabel
+            control={<Checkbox value="remember" color="primary" />}
+            label="Set Alert"
+          />
+
                        <br/>
      
      <Button type = "submit" color="primary">Create</Button>
