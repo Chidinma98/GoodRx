@@ -18,8 +18,8 @@ class PrescriptionsController < ApplicationController
 
   # POST /prescriptions
   def create
-   @user = User.find params[user_id]
-   @user.prescriptions << Prescription.new(:prescription_params)
+   @user = User.find params[:user_id]
+   @user.prescriptions << Prescription.new(prescription_params)
 
    render json:{
      prescription: @user.prescriptions.last
