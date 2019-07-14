@@ -1,66 +1,95 @@
 import React from 'react';
-import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
-import MenuItem from '@material-ui/core/MenuItem';
-import TextField from '@material-ui/core/TextField';
-import { Button } from '@material-ui/core';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import '../App.css';
+import PrescriptionForm from './PrescriptionForm';
 
+const useStyles = makeStyles({
+  card: {
+    maxWidth: 205,
+  },
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+    marginLeft: 50
+  },
+});
 
-const useStyles = makeStyles(theme => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-  },
-  dense: {
-    marginTop: theme.spacing(2),
-  },
-  menu: {
-    width: 200,
-  },
-}));
-
-export default function OutlinedTextFields() {
+export default function SimpleCard() {
   const classes = useStyles();
   
 
   return (
-    <div>m</div>
+    <div className = "med">
+      <div className = "info" >
+    <Card className={classes.card}>
+      <CardContent>
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
+          Word of the Day
+        </Typography>
+        <Typography variant="h5" component="h2">
+         
+        </Typography>
+        <Typography className={classes.pos} color="textSecondary">
+          adjective
+        </Typography>
+        <Typography variant="body2" component="p">
+          well meaning and kindly.
+          <br />
+          {'"a benevolent smile"'}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">Learn More</Button>
+      </CardActions>
+    </Card>
+    </div>
+  
+    <div className = "info">
+    <Card className={classes.card}>
+      <CardContent>
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
+          Word of the Day
+        </Typography>
+        <Typography variant="h5" component="h2">
+         
+        </Typography>
+        <Typography className={classes.pos} color="textSecondary">
+          adjective
+        </Typography>
+        <Typography variant="body2" component="p">
+          well meaning and kindly.
+          <br />
+          {'"a benevolent smile"'}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">Learn More</Button>
+      </CardActions>
+    </Card>
+    </div>
 
 
-//     <form onChange = {this.handleChange} onSubmit = {this.handleSubmit}className={classes.container} noValidate autoComplete="off">
 
-// <TextField
-//         id="outlined-helperText"
-//         name="doctor"
-//         label="Doctor Name"
-//         defaultValue="e.g John Smith"
-//         className={classes.textField}
-//         helperText="Enter Doctor full First and Last name"
-//         margin="normal"
-//         variant="outlined"
-//       />
-   
-//       <TextField
-//         name ="description"
-//         id="outlined-multiline-static"
-//         label="Messages"
-//         multiline
-//         rows="4"
-//         defaultValue=" Hello Doctor..."
-//         className={classes.textField}
-//         margin="normal"
-//         variant="outlined"
-//       />
-//       <Button type = "submit"> Send </Button>
-//     </form>
+
+
+
+
+
+  </div>
   );
 }
-
-
 
 
 

@@ -12,9 +12,12 @@
 
 }
 
-/* h1{
-  color: aqua;
-} */
+.med {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; 
+
+}
 
 img {
   width: 150px
