@@ -37,6 +37,11 @@ img {
  position:absolute;
  left: 550px;
 }
+
+.greet{
+  position:absolute;
+  right: 10px;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

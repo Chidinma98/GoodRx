@@ -145,6 +145,11 @@ class App extends Component {
                     <nav>  <Button color="inherit"><Link to='/signup'> Sign Up </Link>  </Button>    <Button color="inherit" > <Link to='/login'>Login </Link></Button></nav>
 
                   }
+<div className = "greet">
+<Typography variant="p" className={this.props.title} >
+                {currentUser.user_id && `Welcome ${currentUser.username}`}
+              </Typography>
+              </div>
 
 <div className = "title">
 <Typography gutterBottom variant="h5" component="h2" align="center" >
@@ -155,9 +160,9 @@ class App extends Component {
                 </Toolbar>
               </AppBar>
 
-              <Typography variant="h6" className={this.props.title} >
-                {currentUser.user_id && `Hello ${currentUser.username}`}
-              </Typography>
+              {/* <Typography variant="h6" className={this.props.title} >
+                {currentUser.user_id && `Welcome ${currentUser.username}`}
+              </Typography> */}
             </div>
 
 
