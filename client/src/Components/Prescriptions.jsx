@@ -78,7 +78,7 @@ class Prescriptions extends Component {
                       </Typography>
                     </CardContent>
                     <CardActions>
-                      <Button size="small">Learn More</Button>
+                     <Link to ={`/users/${this.props.id}/prescriptions/${prescription.id}`}> <Button size="small">  More</Button> </Link> 
                     </CardActions>
                   </Card>)
 

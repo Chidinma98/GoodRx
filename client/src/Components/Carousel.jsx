@@ -125,21 +125,6 @@ export default function MediaCard() {
 
 
 
-// import React from 'react';
-// import CssBaseline from '@material-ui/core/CssBaseline';
-// import Typography from '@material-ui/core/Typography';
-// import Container from '@material-ui/core/Container';
-// import '../App.css';
-
-// export default function SimpleContainer() {
-//   return (
-//  <div className = "container">
-//    <div className = "boxes">A</div>
-//    <div className = "boxes">B</div>
-//    <div className = "boxes">C</div>
-//  </div>
-//   );
-// }
 
 
 
