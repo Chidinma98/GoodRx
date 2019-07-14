@@ -14,8 +14,9 @@
 
 .med {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around; 
   flex-wrap: wrap; 
+  align-items: center;
 
 }
 

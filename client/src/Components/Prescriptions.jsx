@@ -59,21 +59,22 @@ class Prescriptions extends Component {
        
        
             <div className = "med">{prescriptions.map((prescription, index) => {
-                return ( <Card className={this.props.card}>
+                return ( <Card className={this.props.card} key = {prescription.id}>
                     <CardContent>
-                      <Typography className={this.props.title} color="textSecondary" gutterBottom>
-                        Word of the Day
+                     
+                      <Typography variant="h5" component="h1">
+                      {prescription.name}
                       </Typography>
-                      <Typography variant="h5" component="h2">
-                       
+                      <Typography className={this.props.pos} component="p" >
+                      Dosage:{prescription.dosage}
                       </Typography>
-                      <Typography className={this.props.pos} color="textSecondary">
-                        {prescription.name}
+                      <Typography className={this.props.pos} component="p" >
+                      Time:{prescription.medication_time}
                       </Typography>
-                      <Typography variant="body2" component="p">
-                        well meaning and kindly.
+                      <Typography variant="body2" component="p" color="textSecondary">
+                       Purpose:{prescription.purpose}
                         <br />
-                        {'"a benevolent smile"'}
+                
                       </Typography>
                     </CardContent>
                     <CardActions>
@@ -84,6 +85,7 @@ class Prescriptions extends Component {
 
             })}</div>
 
+<Button onClick={() => { this.props.history.goBack() }} variant="contained" color="primary">Back</Button>
         </div>)
     }
 }
