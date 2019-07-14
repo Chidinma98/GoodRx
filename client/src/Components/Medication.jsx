@@ -1,12 +1,23 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios'
-import Carousel from 'react-bootstrap/Carousel'
+
 
 class Medication extends Component{
+constructor(){
+super()
 
 
 
+
+}
+
+async componentDidMount(){
+const res = await axios.get(`http://localhost:3000/${this.props.history.location.pathname}`)
+console.log(res)
+
+
+}
 
 
     render(){
@@ -14,9 +25,7 @@ class Medication extends Component{
         
         return(<div>
 
-          <Link to = {`/prescriptions`}> <p>Prescriptions</p> </Link>
-          <Link to = {`/messages`}><p>Messages</p></Link>
-          <Link to = {'/carousel'}><p>Pharmacies</p></Link>
+          
 
 
           

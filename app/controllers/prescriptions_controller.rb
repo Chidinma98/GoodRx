@@ -10,7 +10,10 @@ class PrescriptionsController < ApplicationController
 
   # GET /prescriptions/1
   def show
-    render json: @prescription
+    @user = User.find(params[:user_id])
+    @prescriptions= @user.prescriptions
+    @prescription = @prescriptions.find(params[:id])
+    render json: { med: @prescription}
   end
 
   # POST /prescriptions
