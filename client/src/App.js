@@ -18,6 +18,11 @@ import Material from './Components/Material'
 import Medication from './Components/Medication'
 import Practice from './Components/Practice'
 import Papers from './Components/Papers'
+import BottomNavigation from '@material-ui/core/BottomNavigation';
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import RestoreIcon from '@material-ui/icons/Restore';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import LocationOnIcon from '@material-ui/icons/LocationOn'
 import './App.css';
 
 
@@ -29,6 +34,9 @@ import decode from 'jwt-decode';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
+  },
+  iconic: {
+    width: 700,
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -143,7 +151,7 @@ class App extends Component {
                 </Toolbar>
               </AppBar>
 
-              <Typography variant="h6" className={this.props.title}>
+              <Typography variant="h6" className={this.props.title} >
                 {currentUser.user_id && `Hello ${currentUser.username}`}
               </Typography>
             </div>
@@ -156,7 +164,7 @@ class App extends Component {
 
 
 
-
+          
 
           <Switch>
             <Route exact path="/login" render={(props) => <LoginForm {...props} handleLogin={this.handleLogin} />} />
@@ -169,15 +177,29 @@ class App extends Component {
             <Route exact path='/prescriptionform' render={((props) => <PrescriptionForm {...props} id={this.state.currentUser.user_id} />)} />
             <Route exact path="/carousel" component={Carousel}></Route>
             <Route exact path="/material" component={Material}></Route>
-           
-            <Route exact path ="/users/:id/prescriptions/:id" render={((props) => <Papers {...props} id={this.state.currentUser.user_id} />)} />
-           
-            <Route exact path ="/prescriptions/:id" render={((props) => <UpdatePrescription {...props} id={this.state.currentUser.user_id} />)} />
+
+            <Route exact path="/users/:id/prescriptions/:id" render={((props) => <Papers {...props} id={this.state.currentUser.user_id} />)} />
+
+            <Route exact path="/prescriptions/:id" render={((props) => <UpdatePrescription {...props} id={this.state.currentUser.user_id} />)} />
             <Route exact path="/practice" component={Practice}></Route>
-       
+
           </Switch>
+        
+          
         </div>
+       <div className = "foot">
+        <BottomNavigation
+      
+      showLabels
+      className={this.props.iconic}
+    >
+      <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
+      <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
+      <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
+    </BottomNavigation>
+    </div> 
       </Router>
+   
     );
   }
 }

@@ -27,7 +27,7 @@ export default function MediaCard() {
 
 
     <div className="container">
-      <div className="boxes">A
+      <div className="boxes">
            <Card className={classes.card}>
           <CardActionArea>
             <CardMedia
@@ -55,7 +55,7 @@ export default function MediaCard() {
 
 
       </div>
-      <div className="boxes">B
+      <div className="boxes">
     <Card className={classes.card}>
           <CardActionArea>
             <Link to={'/messages'}></Link> <CardMedia
@@ -82,7 +82,7 @@ export default function MediaCard() {
       </div>
 
 
-      <div className="boxes">C
+      <div className="boxes">
     <Card className={classes.card}>
           <CardActionArea>
             <CardMedia
