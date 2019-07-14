@@ -18,13 +18,12 @@ class PrescriptionsController < ApplicationController
 
   # POST /prescriptions
   def create
-    @prescription = Prescription.new(prescription_params)
+   @user = User.find params[user_id]
+   @user.prescriptions << Prescription.new(:prescription_params)
 
-    if @prescription.save
-      render json: @prescription, status: :created, location: @prescription
-    else
-      render json: @prescription.errors, status: :unprocessable_entity
-    end
+   render json:{
+     prescription: @user.prescriptions.last
+   }
   end
 
   # PATCH/PUT /prescriptions/1
