@@ -36,7 +36,7 @@ class Papers extends Component {
       specialty: "",
       purpose: ""
     }
-
+this.handleDelete = this.handleDelete.bind(this)
 
   }
 
@@ -59,6 +59,13 @@ class Papers extends Component {
 
 
   }
+
+  async handleDelete(){
+    await axios.delete(`http://localhost:3000/${this.props.history.location.pathname}`)
+
+    this.props.history.goBack()
+
+}
 
 
 
@@ -173,7 +180,7 @@ class Papers extends Component {
 
               <br />
 
-              <nav> <Link to={`/prescriptions/${med.id}`}> <Button>Edit</Button> </Link> <Button>Delete</Button> </nav>
+              <nav> <Link to={`/prescriptions/${med.id}`}> <Button>Edit</Button> </Link> <Button onClick ={this.handleDelete}>Delete</Button> </nav>
 
 
 

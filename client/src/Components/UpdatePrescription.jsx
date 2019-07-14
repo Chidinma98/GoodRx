@@ -35,6 +35,7 @@ prescriber_phone:""
 
 this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleDelete = this.handleDelete.bind(this)
 
 }
 
@@ -60,10 +61,15 @@ prescriber_specialization:this.state.prescriber_specialization,
 prescriber_phone:this.state.prescriber_phone
 
     })
-
+    this.props.history.goBack()
 }
 
+async handleDelete(){
+    await axios.delete(`http://localhost:3000/users/${this.props.id}/${this.props.history.location.pathname}`)
 
+    this.props.history.goBack()
+
+}
 
   async componentDidMount() {
     const res = await axios.get(`http://localhost:3000/users/${this.props.id}/${this.props.history.location.pathname}`)

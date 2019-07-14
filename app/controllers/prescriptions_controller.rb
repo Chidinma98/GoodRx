@@ -39,7 +39,9 @@ class PrescriptionsController < ApplicationController
 
   # DELETE /prescriptions/1
   def destroy
-    @prescription.destroy
+    @user = User.find params[:user_id]
+    @prescription = @user.prescriptions.where(id: params[:id])
+    @prescription[0].destroy 
   end
 
 
