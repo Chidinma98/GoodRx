@@ -20,11 +20,10 @@ const StyledPaper = withStyles({
 
 
 
-class Papers extends Component {
+class UpdatePrescription extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id:0,
       time: "",
       dosage: "",
       name: "",
@@ -44,7 +43,6 @@ class Papers extends Component {
     const prescription = res.data.med
     // console.log(prescription)
     this.setState({
-      id:prescription.id,
       time: prescription.medication_time,
       name: prescription.name,
       pharmacy: prescription.pharmacy,
@@ -163,7 +161,7 @@ class Papers extends Component {
               </div>
 
               <br />
-              <nav> <Link to={`/prescriptions/${med.id}`}> <Button>Edit</Button> </Link> <Button>Delete</Button> </nav>
+              <nav> <Button>Edit</Button> <Button>Delete</Button> </nav>
 
 
 
@@ -178,4 +176,4 @@ class Papers extends Component {
   }
 }
 
-export default Papers
+export default UpdatePrescription

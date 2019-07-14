@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link, Switch, Redirect } from "react-ro
 import LoginForm from "./Components/LoginForm";
 import SignUpForm from "./Components/SignUpForm";
 import Prescriptions from "./Components/Prescriptions"
+import UpdatePrescription from "./Components/UpdatePrescription"
 import Info from "./Components/Info"
 import Doctors from "./Components/Doctors"
 import Messages from "./Components/Messages"
@@ -168,7 +169,10 @@ class App extends Component {
             <Route exact path='/prescriptionform' render={((props) => <PrescriptionForm {...props} id={this.state.currentUser.user_id} />)} />
             <Route exact path="/carousel" component={Carousel}></Route>
             <Route exact path="/material" component={Material}></Route>
+           
             <Route exact path ="/users/:id/prescriptions/:id" render={((props) => <Papers {...props} id={this.state.currentUser.user_id} />)} />
+           
+            <Route exact path ="/prescriptions/:id" render={((props) => <UpdatePrescription {...props} id={this.state.currentUser.user_id} />)} />
             <Route exact path="/practice" component={Practice}></Route>
        
           </Switch>
