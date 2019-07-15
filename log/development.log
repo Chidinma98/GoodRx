@@ -14591,3 +14591,221 @@ Processing by PrescriptionsController#show as HTML
 Completed 200 OK in 11ms (Views: 0.9ms | ActiveRecord: 1.6ms)
 
 
+Started POST "/auth/login" for ::1 at 2019-07-15 10:13:07 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"password"=>"[FILTERED]", "username"=>"General", "authentication"=>{"password"=>"[FILTERED]", "username"=>"General"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "General"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+Completed 200 OK in 404ms (Views: 1.3ms | ActiveRecord: 13.7ms)
+
+
+Started POST "/users/1/messages" for ::1 at 2019-07-15 10:13:22 -0400
+Processing by MessagesController#create as HTML
+  Parameters: {"doctor"=>"John Smith", "description"=>" Hello Doctor...Practice numbering", "user_id"=>"1", "message"=>{"doctor"=>"John Smith", "description"=>" Hello Doctor...Practice numbering"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:19
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:21
+  [1m[36mMessage Create (17.8ms)[0m  [1m[32mINSERT INTO "messages" ("doctor", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["doctor", "John Smith"], ["description", " Hello Doctor...Practice numbering"], ["user_id", 1], ["created_at", "2019-07-15 14:13:22.424534"], ["updated_at", "2019-07-15 14:13:22.424534"]]
+  ↳ app/controllers/messages_controller.rb:21
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:21
+Completed 200 OK in 438ms (Views: 2.9ms | ActiveRecord: 28.6ms)
+
+
+Started POST "/auth/login" for ::1 at 2019-07-15 10:21:09 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"password"=>"[FILTERED]", "username"=>"General", "authentication"=>{"password"=>"[FILTERED]", "username"=>"General"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "General"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+Completed 200 OK in 385ms (Views: 1.0ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/users/1/messages" for ::1 at 2019-07-15 10:21:17 -0400
+Processing by MessagesController#create as HTML
+  Parameters: {"doctor"=>"John Smith", "description"=>"", "user_id"=>"1", "message"=>{"doctor"=>"John Smith", "description"=>""}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:21
+  [1m[36mMessage Create (3.5ms)[0m  [1m[32mINSERT INTO "messages" ("doctor", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["doctor", "John Smith"], ["description", ""], ["user_id", 1], ["created_at", "2019-07-15 14:21:17.793607"], ["updated_at", "2019-07-15 14:21:17.793607"]]
+  ↳ app/controllers/messages_controller.rb:21
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:21
+Completed 500 Internal Server Error in 288ms (Views: 0.2ms | ActiveRecord: 7.8ms)
+
+
+  
+Twilio::REST::RestError ([HTTP 400] 21602 : Unable to create record
+Message body is required.
+https://www.twilio.com/docs/errors/21602
+
+):
+  
+app/services/twilio_text_messenger.rb:10:in `call'
+app/controllers/messages_controller.rb:25:in `create'
+Started POST "/users/1/messages" for ::1 at 2019-07-15 10:21:26 -0400
+Processing by MessagesController#create as HTML
+  Parameters: {"doctor"=>"John Smith", "description"=>" Hello Doctor...htf", "user_id"=>"1", "message"=>{"doctor"=>"John Smith", "description"=>" Hello Doctor...htf"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:19
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:21
+  [1m[36mMessage Create (1.4ms)[0m  [1m[32mINSERT INTO "messages" ("doctor", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["doctor", "John Smith"], ["description", " Hello Doctor...htf"], ["user_id", 1], ["created_at", "2019-07-15 14:21:26.123940"], ["updated_at", "2019-07-15 14:21:26.123940"]]
+  ↳ app/controllers/messages_controller.rb:21
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:21
+Completed 200 OK in 165ms (Views: 0.6ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/auth/login" for ::1 at 2019-07-15 10:23:21 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"password"=>"[FILTERED]", "username"=>"General", "authentication"=>{"password"=>"[FILTERED]", "username"=>"General"}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "General"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+Completed 200 OK in 447ms (Views: 0.6ms | ActiveRecord: 12.4ms)
+
+
+Started POST "/users/1/messages" for ::1 at 2019-07-15 10:23:30 -0400
+Processing by MessagesController#create as HTML
+  Parameters: {"doctor"=>"John Smith", "description"=>" Hello Doctor...Hiii", "user_id"=>"1", "message"=>{"doctor"=>"John Smith", "description"=>" Hello Doctor...Hiii"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:19
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:21
+  [1m[36mMessage Create (1.2ms)[0m  [1m[32mINSERT INTO "messages" ("doctor", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["doctor", "John Smith"], ["description", " Hello Doctor...Hiii"], ["user_id", 1], ["created_at", "2019-07-15 14:23:30.903069"], ["updated_at", "2019-07-15 14:23:30.903069"]]
+  ↳ app/controllers/messages_controller.rb:21
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:21
+Completed 500 Internal Server Error in 265ms (Views: 0.3ms | ActiveRecord: 9.8ms)
+
+
+  
+Twilio::REST::RestError ([HTTP 400] 21608 : Unable to create record
+The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.
+https://www.twilio.com/docs/errors/21608
+
+):
+  
+app/services/twilio_text_messenger.rb:10:in `call'
+app/controllers/messages_controller.rb:25:in `create'
+Started POST "/users/1/messages" for ::1 at 2019-07-15 10:23:34 -0400
+Processing by MessagesController#create as HTML
+  Parameters: {"doctor"=>"John Smith", "description"=>" Hello Doctor...Hiii", "user_id"=>"1", "message"=>{"doctor"=>"John Smith", "description"=>" Hello Doctor...Hiii"}}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:19
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:21
+  [1m[36mMessage Create (0.7ms)[0m  [1m[32mINSERT INTO "messages" ("doctor", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["doctor", "John Smith"], ["description", " Hello Doctor...Hiii"], ["user_id", 1], ["created_at", "2019-07-15 14:23:35.007846"], ["updated_at", "2019-07-15 14:23:35.007846"]]
+  ↳ app/controllers/messages_controller.rb:21
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:21
+Completed 500 Internal Server Error in 155ms (Views: 0.2ms | ActiveRecord: 5.4ms)
+
+
+  
+Twilio::REST::RestError ([HTTP 400] 21608 : Unable to create record
+The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.
+https://www.twilio.com/docs/errors/21608
+
+):
+  
+app/services/twilio_text_messenger.rb:10:in `call'
+app/controllers/messages_controller.rb:25:in `create'
+Started POST "/users/1/messages" for ::1 at 2019-07-15 10:24:01 -0400
+Processing by MessagesController#create as HTML
+  Parameters: {"doctor"=>" John Smith", "description"=>" Hello Doctor...hi..", "user_id"=>"1", "message"=>{"doctor"=>" John Smith", "description"=>" Hello Doctor...hi.."}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:19
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:21
+  [1m[36mMessage Create (0.7ms)[0m  [1m[32mINSERT INTO "messages" ("doctor", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["doctor", " John Smith"], ["description", " Hello Doctor...hi.."], ["user_id", 1], ["created_at", "2019-07-15 14:24:01.809477"], ["updated_at", "2019-07-15 14:24:01.809477"]]
+  ↳ app/controllers/messages_controller.rb:21
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:21
+Completed 200 OK in 223ms (Views: 0.1ms | ActiveRecord: 12.8ms)
+
+
+Started POST "/users/1/messages" for ::1 at 2019-07-15 10:27:17 -0400
+Processing by MessagesController#create as HTML
+  Parameters: {"doctor"=>"John Smith", "description"=>" Hello Doctor...huhh", "user_id"=>"1", "message"=>{"doctor"=>"John Smith", "description"=>" Hello Doctor...huhh"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:21
+  [1m[36mMessage Create (3.5ms)[0m  [1m[32mINSERT INTO "messages" ("doctor", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["doctor", "John Smith"], ["description", " Hello Doctor...huhh"], ["user_id", 1], ["created_at", "2019-07-15 14:27:17.649168"], ["updated_at", "2019-07-15 14:27:17.649168"]]
+  ↳ app/controllers/messages_controller.rb:21
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:21
+Completed 500 Internal Server Error in 396ms (Views: 0.6ms | ActiveRecord: 22.4ms)
+
+
+  
+Twilio::REST::RestError ([HTTP 400] 21608 : Unable to create record
+The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.
+https://www.twilio.com/docs/errors/21608
+
+):
+  
+app/services/twilio_text_messenger.rb:10:in `call'
+app/controllers/messages_controller.rb:25:in `create'
+Started POST "/users/1/messages" for ::1 at 2019-07-15 10:27:47 -0400
+Processing by MessagesController#create as HTML
+  Parameters: {"doctor"=>"John Smith", "description"=>" Hello Doctor...huhh", "user_id"=>"1", "message"=>{"doctor"=>"John Smith", "description"=>" Hello Doctor...huhh"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:21
+  [1m[36mMessage Create (3.0ms)[0m  [1m[32mINSERT INTO "messages" ("doctor", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["doctor", "John Smith"], ["description", " Hello Doctor...huhh"], ["user_id", 1], ["created_at", "2019-07-15 14:27:48.069405"], ["updated_at", "2019-07-15 14:27:48.069405"]]
+  ↳ app/controllers/messages_controller.rb:21
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:21
+Completed 500 Internal Server Error in 307ms (Views: 1.1ms | ActiveRecord: 7.0ms)
+
+
+  
+Twilio::REST::RestError ([HTTP 400] 21608 : Unable to create record
+The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.
+https://www.twilio.com/docs/errors/21608
+
+):
+  
+app/services/twilio_text_messenger.rb:10:in `call'
+app/controllers/messages_controller.rb:25:in `create'
+Started POST "/users/1/messages" for ::1 at 2019-07-15 10:31:36 -0400
+Processing by MessagesController#create as HTML
+  Parameters: {"doctor"=>"John Smith", "description"=>" Hello Doctor...kjhg", "user_id"=>"1", "message"=>{"doctor"=>"John Smith", "description"=>" Hello Doctor...kjhg"}}
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:19
+  [1m[35m (9.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:21
+  [1m[36mMessage Create (4.9ms)[0m  [1m[32mINSERT INTO "messages" ("doctor", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["doctor", "John Smith"], ["description", " Hello Doctor...kjhg"], ["user_id", 1], ["created_at", "2019-07-15 14:31:36.539639"], ["updated_at", "2019-07-15 14:31:36.539639"]]
+  ↳ app/controllers/messages_controller.rb:21
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:21
+Completed 500 Internal Server Error in 398ms (Views: 1.2ms | ActiveRecord: 20.9ms)
+
+
+  
+Twilio::REST::RestError ([HTTP 400] 21608 : Unable to create record
+The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.
+https://www.twilio.com/docs/errors/21608
+
+):
+  
+app/services/twilio_text_messenger.rb:10:in `call'
+app/controllers/messages_controller.rb:25:in `create'
+Started POST "/users/1/messages" for ::1 at 2019-07-15 10:32:10 -0400
+Processing by MessagesController#create as HTML
+  Parameters: {"doctor"=>"John Smith", "description"=>" Hello Doctor...verification", "user_id"=>"1", "message"=>{"doctor"=>"John Smith", "description"=>" Hello Doctor...verification"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:21
+  [1m[36mMessage Create (1.1ms)[0m  [1m[32mINSERT INTO "messages" ("doctor", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["doctor", "John Smith"], ["description", " Hello Doctor...verification"], ["user_id", 1], ["created_at", "2019-07-15 14:32:10.598368"], ["updated_at", "2019-07-15 14:32:10.598368"]]
+  ↳ app/controllers/messages_controller.rb:21
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:21
+Completed 200 OK in 423ms (Views: 0.4ms | ActiveRecord: 27.2ms)
+
+
