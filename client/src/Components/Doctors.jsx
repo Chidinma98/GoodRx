@@ -69,7 +69,7 @@ const tiers = [
   {
     title: 'Free',
     price: '0',
-    description: [' Prescription details . Free SMS to one number.'],
+    description: [' Prescription details . Free SMS to one number. Phone Alerts Med Time'],
     buttonText: 'Sign up for free',
     buttonVariant: 'outlined',
   },
@@ -80,7 +80,7 @@ const tiers = [
     description: [
       'Prescription details. ',
       'Free SMS to one number.',
-      'Info about local pharmacy.',
+      'Prescription info from local pharmacy.',
       'Priority email support.',
     ],
     buttonText: 'Get started',
@@ -123,6 +123,8 @@ export default function Pricing() {
 
   return (
     <React.Fragment>
+        <br/>
+        
       <CssBaseline />
       
       {/* Hero unit */}

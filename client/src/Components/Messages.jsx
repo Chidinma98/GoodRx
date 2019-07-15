@@ -66,8 +66,9 @@ const { classes } = this.props
 
         return (<div>
             
-            
+            <br/>
             <Button  variant="contained" color="primary" onClick={() => { this.props.history.goBack() }}>Back</Button> 
+            <br/>
             <form onChange = {this.handleChange} onSubmit = {this.handleSubmit}className={this.props.container} noValidate autoComplete="off">
 
 <TextField
@@ -80,7 +81,7 @@ const { classes } = this.props
         margin="normal"
         variant="outlined"
       />
-   
+   <br/>
       <TextField
         name ="description"
         id="outlined-multiline-static"
@@ -92,6 +93,7 @@ const { classes } = this.props
         margin="normal"
         variant="outlined"
       />
+      <br/>
       <Button variant="contained" color="primary" type = "submit"> Send </Button>
     </form>
 

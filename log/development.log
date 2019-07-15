@@ -14052,3 +14052,167 @@ Processing by PrescriptionsController#index as HTML
 Completed 200 OK in 336ms (Views: 148.2ms | ActiveRecord: 17.1ms)
 
 
+Started GET "/users/1/prescriptions" for ::1 at 2019-07-14 21:15:19 -0400
+Processing by PrescriptionsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:6
+  [1m[36mPrescription Load (0.7ms)[0m  [1m[34mSELECT "prescriptions".* FROM "prescriptions" WHERE "prescriptions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:8
+Completed 200 OK in 294ms (Views: 158.3ms | ActiveRecord: 9.7ms)
+
+
+Started GET "//users/1/prescriptions/6" for ::1 at 2019-07-14 21:15:22 -0400
+Processing by PrescriptionsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"6"}
+  [1m[36mPrescription Load (0.7ms)[0m  [1m[34mSELECT  "prescriptions".* FROM "prescriptions" WHERE "prescriptions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:53
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:13
+  [1m[36mPrescription Load (3.1ms)[0m  [1m[34mSELECT  "prescriptions".* FROM "prescriptions" WHERE "prescriptions"."user_id" = $1 AND "prescriptions"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:15
+Completed 200 OK in 149ms (Views: 11.7ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/users/1//prescriptions/6" for ::1 at 2019-07-14 21:15:28 -0400
+Processing by PrescriptionsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"6"}
+  [1m[36mPrescription Load (0.9ms)[0m  [1m[34mSELECT  "prescriptions".* FROM "prescriptions" WHERE "prescriptions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:53
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:13
+  [1m[36mPrescription Load (0.7ms)[0m  [1m[34mSELECT  "prescriptions".* FROM "prescriptions" WHERE "prescriptions"."user_id" = $1 AND "prescriptions"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:15
+Completed 200 OK in 87ms (Views: 4.4ms | ActiveRecord: 2.0ms)
+
+
+Started PUT "/users/1//prescriptions/6" for ::1 at 2019-07-14 21:15:37 -0400
+Processing by PrescriptionsController#update as HTML
+  Parameters: {"name"=>"Advil", "dosage"=>"10mg", "medication_time"=>"", "purpose"=>"Bellyaches", "pharmacy"=>"costco", "prescriber"=>nil, "prescriber_specialization"=>"", "prescriber_phone"=>"", "user_id"=>"1", "id"=>"6", "prescription"=>{"name"=>"Advil", "dosage"=>"10mg", "medication_time"=>"", "purpose"=>"Bellyaches", "pharmacy"=>"costco", "prescriber"=>nil, "prescriber_specialization"=>"", "prescriber_phone"=>""}}
+  [1m[36mPrescription Load (2.2ms)[0m  [1m[34mSELECT  "prescriptions".* FROM "prescriptions" WHERE "prescriptions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:53
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:31
+  [1m[36mPrescription Load (0.4ms)[0m  [1m[34mSELECT "prescriptions".* FROM "prescriptions" WHERE "prescriptions"."user_id" = $1 AND "prescriptions"."id" = $2[0m  [["user_id", 1], ["id", 6]]
+  ↳ app/controllers/prescriptions_controller.rb:33
+  [1m[35m (3.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/prescriptions_controller.rb:33
+  [1m[36mPrescription Update (8.3ms)[0m  [1m[33mUPDATE "prescriptions" SET "medication_time" = $1, "purpose" = $2, "prescriber_specialization" = $3, "updated_at" = $4 WHERE "prescriptions"."id" = $5[0m  [["medication_time", ""], ["purpose", "Bellyaches"], ["prescriber_specialization", ""], ["updated_at", "2019-07-15 01:15:37.400278"], ["id", 6]]
+  ↳ app/controllers/prescriptions_controller.rb:33
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/prescriptions_controller.rb:33
+Completed 200 OK in 787ms (Views: 5.7ms | ActiveRecord: 19.2ms)
+
+
+Started GET "//users/1/prescriptions/6" for ::1 at 2019-07-14 21:15:38 -0400
+Processing by PrescriptionsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"6"}
+  [1m[36mPrescription Load (0.9ms)[0m  [1m[34mSELECT  "prescriptions".* FROM "prescriptions" WHERE "prescriptions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:53
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:13
+  [1m[36mPrescription Load (3.4ms)[0m  [1m[34mSELECT  "prescriptions".* FROM "prescriptions" WHERE "prescriptions"."user_id" = $1 AND "prescriptions"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:15
+Completed 200 OK in 38ms (Views: 1.0ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/users/1/prescriptions" for ::1 at 2019-07-14 21:15:43 -0400
+Processing by PrescriptionsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:6
+  [1m[36mPrescription Load (0.8ms)[0m  [1m[34mSELECT "prescriptions".* FROM "prescriptions" WHERE "prescriptions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:8
+Completed 200 OK in 64ms (Views: 52.4ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/users/undefined/prescriptions" for ::1 at 2019-07-14 21:16:37 -0400
+Processing by PrescriptionsController#index as HTML
+  Parameters: {"user_id"=>"undefined"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:6
+Completed 404 Not Found in 54ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=undefined):
+  
+app/controllers/prescriptions_controller.rb:6:in `index'
+Started GET "/users/1/prescriptions" for ::1 at 2019-07-14 21:16:39 -0400
+Processing by PrescriptionsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:6
+  [1m[36mPrescription Load (0.7ms)[0m  [1m[34mSELECT "prescriptions".* FROM "prescriptions" WHERE "prescriptions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:8
+Completed 200 OK in 47ms (Views: 35.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users/undefined/prescriptions" for ::1 at 2019-07-14 21:17:03 -0400
+Processing by PrescriptionsController#index as HTML
+  Parameters: {"user_id"=>"undefined"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:6
+Completed 404 Not Found in 26ms (ActiveRecord: 1.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=undefined):
+  
+app/controllers/prescriptions_controller.rb:6:in `index'
+Started GET "/users/1/prescriptions" for ::1 at 2019-07-14 21:17:06 -0400
+Processing by PrescriptionsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (11.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:6
+  [1m[36mPrescription Load (3.2ms)[0m  [1m[34mSELECT "prescriptions".* FROM "prescriptions" WHERE "prescriptions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:8
+Completed 200 OK in 56ms (Views: 33.7ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/users/1/prescriptions" for ::1 at 2019-07-14 21:17:49 -0400
+Processing by PrescriptionsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:6
+  [1m[36mPrescription Load (0.7ms)[0m  [1m[34mSELECT "prescriptions".* FROM "prescriptions" WHERE "prescriptions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:8
+Completed 200 OK in 43ms (Views: 23.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/users/1/prescriptions" for ::1 at 2019-07-14 21:19:40 -0400
+Processing by PrescriptionsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:6
+  [1m[36mPrescription Load (4.5ms)[0m  [1m[34mSELECT "prescriptions".* FROM "prescriptions" WHERE "prescriptions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:8
+Completed 200 OK in 58ms (Views: 36.9ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/users/1/prescriptions" for ::1 at 2019-07-14 21:20:26 -0400
+Processing by PrescriptionsController#create as HTML
+  Parameters: {"name"=>"Excedrin", "dosage"=>"10mg", "medication_time"=>"2:00pm", "purpose"=>"Migranes", "pharmacy"=>"rite-aid", "prescriber"=>"Me", "prescriber_specialization"=>"Coding", "prescriber_phone"=>"000-000-0000", "user_id"=>"1", "prescription"=>{"name"=>"Excedrin", "dosage"=>"10mg", "medication_time"=>"2:00pm", "purpose"=>"Migranes", "pharmacy"=>"rite-aid", "prescriber"=>"Me", "prescriber_specialization"=>"Coding", "prescriber_phone"=>"000-000-0000"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:21
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/prescriptions_controller.rb:22
+  [1m[36mPrescription Create (27.7ms)[0m  [1m[32mINSERT INTO "prescriptions" ("name", "dosage", "medication_time", "purpose", "pharmacy", "prescriber", "prescriber_specialization", "prescriber_phone", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "Excedrin"], ["dosage", "10mg"], ["medication_time", "2:00pm"], ["purpose", "Migranes"], ["pharmacy", "rite-aid"], ["prescriber", "Me"], ["prescriber_specialization", "Coding"], ["prescriber_phone", "000-000-0000"], ["user_id", 1], ["created_at", "2019-07-15 01:20:26.755351"], ["updated_at", "2019-07-15 01:20:26.755351"]]
+  ↳ app/controllers/prescriptions_controller.rb:22
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/prescriptions_controller.rb:22
+  [1m[36mPrescription Load (6.2ms)[0m  [1m[34mSELECT  "prescriptions".* FROM "prescriptions" WHERE "prescriptions"."user_id" = $1 ORDER BY "prescriptions"."id" DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:25
+Completed 200 OK in 221ms (Views: 5.6ms | ActiveRecord: 41.1ms)
+
+
+Started GET "/users/1/prescriptions" for ::1 at 2019-07-14 21:20:26 -0400
+Processing by PrescriptionsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:6
+  [1m[36mPrescription Load (10.7ms)[0m  [1m[34mSELECT "prescriptions".* FROM "prescriptions" WHERE "prescriptions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:8
+Completed 200 OK in 52ms (Views: 32.8ms | ActiveRecord: 14.5ms)
+
+

@@ -56,6 +56,7 @@ class Prescriptions extends Component {
 
 
         return (<div >
+           <br/>
        <Button onClick={() => { this.props.history.goBack() }} variant="contained" color="primary">Back</Button>
        
             <div className = "med">{prescriptions.map((prescription, index) => {
@@ -84,6 +85,7 @@ class Prescriptions extends Component {
 
 
             })}</div>
+             <br/>
  <Link to = {`/prescriptionform`}><Button variant="contained" color="primary">Add a Prescription</Button></Link>
 
 <br />
