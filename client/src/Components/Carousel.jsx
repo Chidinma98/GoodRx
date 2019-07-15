@@ -9,6 +9,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Link } from "react-router-dom";
+
 import '../App.css';
 
 const useStyles = makeStyles({
@@ -18,7 +19,11 @@ const useStyles = makeStyles({
   media: {
     height: 145,
   },
+  
+
 });
+
+
 
 export default function MediaCard() {
   const classes = useStyles();
@@ -92,21 +97,26 @@ export default function MediaCard() {
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
-                Pharmacies
+                Pricing
           </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-                See All your saved pharmacies. Contact them about medication information and much more.
+               Want more from your Wellnes_Rx Account?! See out pricing options for Pro and Enterprise Accounts.
           </Typography>
             </CardContent>
           </CardActionArea>
           <CardActions>
 
-           <Link to = {'/papers'}> <Button size="small" color="primary">
+           <Link to = {'/doctors'}> <Button size="small" color="primary">
               Learn More
         </Button></Link>
           </CardActions>
         </Card>
       </div>
+
+     
+
+
+
     </div>
   );
 }

@@ -160,9 +160,7 @@ class App extends Component {
                 </Toolbar>
               </AppBar>
 
-              {/* <Typography variant="h6" className={this.props.title} >
-                {currentUser.user_id && `Welcome ${currentUser.username}`}
-              </Typography> */}
+              
             </div>
 
 
@@ -191,6 +189,7 @@ class App extends Component {
 
             <Route exact path="/prescriptions/:id" render={((props) => <UpdatePrescription {...props} id={this.state.currentUser.user_id} />)} />
             <Route exact path="/practice" component={Practice}></Route>
+            <Route exact path="/doctors" component={Doctors}></Route>
 
           </Switch>
         
