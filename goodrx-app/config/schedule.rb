@@ -19,6 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 
-# every 1.day, :at => '4:49 pm' do
-#     runner "MyModel.task_to_run_at_four_thirty_in_the_morning"
+# every 1.day, :at => '10:40 am' do
+#     rake "send_text:task"
 #   end
