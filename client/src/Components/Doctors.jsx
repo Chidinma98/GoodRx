@@ -69,7 +69,7 @@ const tiers = [
   {
     title: 'Free',
     price: '0',
-    description: [' Prescription details . Free SMS to one number. Phone Alerts Med Time'],
+    description: [' Prescription details . Free SMS to one number. Recieve text alerts during medication times.'],
     buttonText: 'Sign up for free',
     buttonVariant: 'outlined',
   },
@@ -90,10 +90,10 @@ const tiers = [
     title: 'Enterprise',
     price: '30',
     description: [
-      'Make direct calls you your doctor/pharmacy',
-      'Send Free SMS to multiple numbers',
-      'Help center access',
-      'Phone & email support',
+      'Make direct calls you your doctor/pharmacy.',
+      'Send Free SMS to multiple numbers.',
+      'Help center access.',
+      'Phone & email support.',
     ],
     buttonText: 'Contact us',
     buttonVariant: 'outlined',

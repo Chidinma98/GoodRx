@@ -76,7 +76,9 @@ this.handleDelete = this.handleDelete.bind(this)
 
     return (
       <>
+      <br/>
         <Button onClick={() => { this.props.history.goBack() }} variant="contained" color="primary">Back</Button>
+        <br/>
         <div className="add-update-product">
 
           <div className="paper-container">
